@@ -3,7 +3,7 @@ import { Bar } from "react-chartjs-2";
 
 function BarChart() {
   const windowWidth = window.innerWidth;
-  let barChartHeight = windowWidth < 1025 ? 170 : 135;
+  let barChartHeight = windowWidth < 1025 ? 170 : 129;
 
   return (
     <div className="bar_chart chart">

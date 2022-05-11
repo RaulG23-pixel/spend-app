@@ -2,9 +2,6 @@ import React from "react";
 import { Doughnut } from "react-chartjs-2";
 
 function DoughtnutChart() {
-  const windowWidth = window.innerWidth;
-  let dougnutChartWidth = windowWidth < 1025 ? 40 : 40;
-  let doughnutChartHeight = windowWidth < 1025 ? 20 : 42;
   return (
     <div className="doughnut_chart chart">
       <h3>Frecuent spents</h3>
@@ -29,8 +26,8 @@ function DoughtnutChart() {
           responsive: true,
           maintainAspectRatio: true,
         }}
-        width={dougnutChartWidth}
-        height={doughnutChartHeight}
+        width={50}
+        height={50}
       />
     </div>
   );

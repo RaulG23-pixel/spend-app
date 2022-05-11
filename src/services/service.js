@@ -10,7 +10,7 @@ async function getUser(token) {
     const data = await axios.get(url, options);
     return data;
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 }
 async function logIn(user) {

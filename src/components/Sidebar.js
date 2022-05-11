@@ -1,19 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import esqueleto from "../assets/esqueleto.jpg";
 import { NavLink } from "react-router-dom";
 
 function Sidebar(props) {
   const { user } = props;
-
+  const [isLinkActive, setIsLinkActive] = useState(false);
   const dropdowns = document.querySelectorAll(".dropdown_click");
   dropdowns.forEach((dropdown) => {
     dropdown.addEventListener("click", () => {
-      dropdown.classList.toggle("active");
       let dropDownContent = dropdown.nextElementSibling;
       let dropdownIcon = dropdown.children[1];
       dropdownIcon.classList.toggle("rotate");
-
-      if (dropdown.classList.contains("active")) {
+      setIsLinkActive(!isLinkActive);
+      if (isLinkActive) {
         dropDownContent.style.height = "auto";
       } else {
         dropDownContent.style.height = "0px";
@@ -22,14 +21,14 @@ function Sidebar(props) {
   });
 
   return (
-    <aside className="sidebar">
-      <header>
-        <div className="img_container">
-          <img src={esqueleto} alt="avatar" />
-        </div>
-        <span>{user}</span>
-      </header>
+    <aside className="sidebar active">
       <section>
+        <div className="sidebar__header">
+          <h3>SpendApp</h3>
+          <button className="hamburger">
+            <i className="fas fa-bars"></i>
+          </button>
+        </div>
         <ul className="sidebar_links">
           <NavLink to="/dashboard">
             <i className="fas fa-chart-pie sidebar_icon"></i>
@@ -81,6 +80,19 @@ function Sidebar(props) {
           </ul>
         </ul>
       </section>
+      <footer className="sidebar__footer">
+        <div className="flex">
+          <div className="user">
+            <div className="img_container">
+              <img src={esqueleto} alt="avatar" />
+            </div>
+            <span>{user}</span>
+          </div>
+          <button className="config">
+            <i className="fas fa-cog"></i>
+          </button>
+        </div>
+      </footer>
     </aside>
   );
 }

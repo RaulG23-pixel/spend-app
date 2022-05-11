@@ -11,27 +11,21 @@ function Dashboard() {
   const [isLogged, setIsLogged] = useState(false);
   const [user, setUser] = useState(null);
   const token = localStorage.getItem("access_token");
-  const storedUser = localStorage.getItem("user");
+
   useEffect(() => {
-    if (token !== undefined && token !== null) setIsLogged(true);
     const fetchUser = async () => {
       const { data } = await getUser(token);
       dispatch({ type: "set-user", payload: data });
-      setUser(data.username);
-      localStorage.setItem("user", JSON.stringify(data));
+      setIsLogged(true);
     };
 
-    if (isLogged && storedUser === null) {
+    if (store.user) setUser(store.user.username);
+    if (!isLogged) {
       fetchUser();
     }
-    if (storedUser) {
-      let data = JSON.parse(storedUser);
-      dispatch({ type: "set-user", payload: data });
-      setUser(data.username);
-    }
-  }, [isLogged, dispatch, storedUser, token]);
+  }, [isLogged, dispatch, token, store.user]);
 
-  if (token === null || token === undefined) {
+  if (!token) {
     return <Redirect to="/login" />;
   }
   if (store.user) {

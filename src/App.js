@@ -4,6 +4,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
+import CreateSpend from "./pages/CreateSpend";
 import Error404 from "./pages/Error404";
 import StoreProvider from "./store/StoreProvider";
 
@@ -27,7 +28,7 @@ function App() {
                 <Dashboard />
               </Route>
               <Route exac path="/create/spend">
-                <div></div>
+                <CreateSpend />
               </Route>
               <Route exac path="/create/save">
                 <div></div>
