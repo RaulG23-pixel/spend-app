@@ -4,9 +4,11 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
-import CreateSpend from "./pages/CreateSpend";
+import Spends from "./pages/Spends";
 import Error404 from "./pages/Error404";
 import StoreProvider from "./store/StoreProvider";
+import Profile from "./components/Profile";
+import Saves from "./pages/Saves";
 
 function App() {
   return (
@@ -15,24 +17,13 @@ function App() {
         <Router>
           <main>
             <Switch>
-              <Route exact path="/home">
-                <Home />
-              </Route>
-              <Route exact path="/register">
-                <Register />
-              </Route>
-              <Route exact path="/login">
-                <Login />
-              </Route>
-              <Route exact path="/dashboard">
-                <Dashboard />
-              </Route>
-              <Route exac path="/create/spend">
-                <CreateSpend />
-              </Route>
-              <Route exac path="/create/save">
-                <div></div>
-              </Route>
+              <Route exact path="/home" component={Home} />
+              <Route exact path="/register" component={Register} />
+              <Route exact path="/login" component={Login} />
+              <Route exact path="/dashboard" component={Dashboard} />
+              <Route exact path="/profile" component={Profile} />
+              <Route exact path="/spends" component={Spends} />
+              <Route exact path="/saves" component={Saves} />
               <Route exact path="/">
                 <Home />
               </Route>
