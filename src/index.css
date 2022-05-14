@@ -236,11 +236,11 @@ input:focus {
 @media screen and (min-width: 768px) {
   .app_container {
     display: grid;
-    grid-template-columns: 20% 82%;
+    grid-template-columns: 20% 87%;
   }
 }
 .main_container {
-  width: 94%;
+  width: 90%;
   padding: 0 2rem;
   margin-top: 1rem;
   margin-bottom: 3rem;
@@ -602,7 +602,7 @@ td {
   border: 1px solid #ccc;
   padding: 0.5rem 0.7rem;
   outline: none;
-  width: 76%;
+  width: 84%;
 }
 .group textarea {
   resize: none;
@@ -648,8 +648,8 @@ td {
   grid-template-columns: 65% 35%;
 }
 .user__avatar .img_container {
-  width: 12rem;
-  height: 12rem;
+  width: 9.3rem;
+  height: 9.3rem;
 }
 .user__avatar .img_container img {
   border: 2px solid rgb(88, 88, 88);

@@ -7,7 +7,7 @@ import Dashboard from "./pages/Dashboard";
 import Spends from "./pages/Spends";
 import Error404 from "./pages/Error404";
 import StoreProvider from "./store/StoreProvider";
-import Profile from "./components/Profile";
+import Profile from "./pages/Profile";
 import Saves from "./pages/Saves";
 
 function App() {

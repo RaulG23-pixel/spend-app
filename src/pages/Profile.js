@@ -1,10 +1,13 @@
 import React, { useEffect, useContext, useState } from "react";
-import { Redirect } from "react-router-dom";
+import { Redirect, Switch } from "react-router-dom";
 import { getUser } from "../services/service";
 import { storeContext } from "../store/StoreProvider";
 import { getAccessToken } from "../utils/utils";
-import Sidebar from "./Sidebar";
+import Sidebar from "../components/Sidebar";
 import esqueleto from "../assets/esqueleto.jpg";
+import { Route } from "react-router-dom";
+import EditProfileData from "../components/EditProfileData";
+import ProfileData from "../components/ProfileData";
 
 function Profile() {
   const [store, dispatch] = useContext(storeContext);
@@ -52,33 +55,10 @@ function Profile() {
               </div>
             </header>
             <section>
-              <form className="profile__data">
-                <section class="grid__data">
-                  <div className="user__data">
-                    <div className="group">
-                      <label htmlFor="username">Username</label>
-                      <input name="username" type="text" />
-                      <span className="group__description">
-                        Be creative, this will be your nickname
-                      </span>
-                    </div>
-                    <div className="group">
-                      <label htmlFor="email">Email</label>
-                      <input name="email" type="email" />
-                    </div>
-                    <div className="group">
-                      <label htmlFor="bio">Bio</label>
-                      <textarea name="bio"></textarea>
-                    </div>
-                  </div>
-                  <div className="user__avatar">
-                    <span className="avatar__title">Profile picture</span>
-                    <div className="img_container">
-                      <img src={esqueleto} alt="avatar" />
-                    </div>
-                  </div>
-                </section>
-              </form>
+              <Switch>
+                <Route path="/profile/edit" component={EditProfileData} />
+                <Route path="/profile" component={ProfileData} />
+              </Switch>
             </section>
           </section>
           <Sidebar user={user} />
