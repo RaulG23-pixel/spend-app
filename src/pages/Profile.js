@@ -1,19 +1,19 @@
 import React, { useEffect, useContext, useState } from "react";
-import { Redirect, Switch } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import { getUser } from "../services/service";
 import { storeContext } from "../store/StoreProvider";
 import { getAccessToken } from "../utils/utils";
 import Sidebar from "../components/Sidebar";
 import esqueleto from "../assets/esqueleto.jpg";
-import { Route } from "react-router-dom";
-import EditProfileData from "../components/EditProfileData";
 import ProfileData from "../components/ProfileData";
+import EditProfileData from "../components/EditProfileData";
 
 function Profile() {
   const [store, dispatch] = useContext(storeContext);
   const token = getAccessToken();
   const [user, setUser] = useState();
   const [isLogged, setIsLogged] = useState(false);
+  const [isEdit, setIsEdit] = useState(false);
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -55,10 +55,25 @@ function Profile() {
               </div>
             </header>
             <section>
-              <Switch>
-                <Route path="/profile/edit" component={EditProfileData} />
-                <Route path="/profile" component={ProfileData} />
-              </Switch>
+              <nav className="profile__links">
+                <button
+                  onClick={() => setIsEdit(false)}
+                  className={`button button-edit ${!isEdit ? "active" : ""}`}
+                >
+                  Profile
+                </button>
+                <button
+                  onClick={() => setIsEdit(true)}
+                  className={`button button-edit ${isEdit ? "active" : ""}`}
+                >
+                  Edit
+                </button>
+              </nav>
+              {
+                <div className="profile__outlet">
+                  {isEdit ? <EditProfileData /> : <ProfileData />}
+                </div>
+              }
             </section>
           </section>
           <Sidebar user={user} />

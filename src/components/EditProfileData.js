@@ -2,8 +2,8 @@ import React from "react";
 
 function EditProfileData() {
   return (
-    <form className="profile__data">
-      <section class="grid__data">
+    <form className="profile__edit_data">
+      <section className="grid__data">
         <div className="user__data">
           <div className="group">
             <label htmlFor="username">Username</label>
@@ -15,10 +15,12 @@ function EditProfileData() {
           <div className="group">
             <label htmlFor="email">Email</label>
             <input name="email" type="email" />
+            <span className="group__description">username@example.com</span>
           </div>
           <div className="group">
             <label htmlFor="bio">Bio</label>
             <textarea name="bio"></textarea>
+            <span className="group__description">Your profile description</span>
           </div>
         </div>
       </section>

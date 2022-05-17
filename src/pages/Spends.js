@@ -35,7 +35,13 @@ function CreateSpend() {
                 Here you can see all your current spends
               </span>
             </header>
-            <section></section>
+            <section>
+              <div className="spend__indicators">
+                <div>a</div>
+                <div>b</div>
+                <div>c</div>
+              </div>
+            </section>
           </section>
           <Sidebar user={user} />
         </div>

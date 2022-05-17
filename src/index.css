@@ -1,12 +1,14 @@
 :root {
   --color1: rgb(16, 41, 180);
+  --color2: rgb(11, 88, 204);
   --grey: rgb(167, 165, 165);
-  --dark_grey: rgb(116, 116, 116);
+  --dark_grey: rgb(36, 36, 36);
   --sidebar: rgb(16, 101, 180);
   --sidebar_footer: rgb(5, 27, 48);
   --config: rgb(14, 73, 128);
   --purple: rgb(136, 101, 233);
   --orange: rgb(252, 166, 7);
+  --button: rgb(14, 136, 207);
 }
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;700&display=swap");
 body {
@@ -582,9 +584,13 @@ td {
   font-size: 12px;
   font-weight: bold;
 }
-/*Profile*/
-.profile__data {
-  margin-top: 4.3rem;
+/***Profile****/
+.profile__outlet {
+  margin-top: 1.4rem;
+}
+/*Edit profile*/
+.profile__edit_data {
+  margin-top: 1.3rem;
 }
 .group {
   margin-bottom: 1.52rem;
@@ -611,17 +617,17 @@ td {
   display: block;
   font-size: 12px;
   margin-top: 3px;
-  color: var(--grey);
+  color: var(--dark_grey);
 }
-
+/*User header*/
 .user__header {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   margin-top: 2rem;
-  background-color: #ccc;
-  width: max-content;
-  padding: 1rem 3rem 1rem 1.3rem;
+  background-color: rgb(197, 210, 253);
+  width: 290px;
+  padding: 2.3rem 3rem 2.3rem 1.3rem;
   border-radius: 8px;
 }
 .user__header__data {
@@ -630,7 +636,7 @@ td {
 }
 
 .user__header__title {
-  font-size: 1.3rem;
+  font-size: 1.48rem;
   margin-bottom: 3px;
 }
 .user__header__subtitle {
@@ -643,20 +649,67 @@ td {
 .user__header .img_container img {
   border: 2px solid rgb(88, 88, 88);
 }
+/**/
 .grid__data {
   display: grid;
-  grid-template-columns: 65% 35%;
+  grid-template-columns: 70%;
 }
-.user__avatar .img_container {
-  width: 9.3rem;
-  height: 9.3rem;
+
+.button {
+  text-decoration: none;
+  padding: 0.5rem 3rem;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
 }
-.user__avatar .img_container img {
-  border: 2px solid rgb(88, 88, 88);
+.button-edit {
+  background-color: rgb(224, 224, 224);
+  color: rgb(32, 32, 32);
+  border-radius: 5px 0 0 5px;
 }
-.avatar__title {
-  font-size: 17px;
+.button-edit.active {
+  background-color: rgb(31, 119, 207);
+  color: #fff;
+}
+.button-edit:last-child {
+  border-radius: 0 5px 5px 0;
+}
+.button-edit:hover {
+  background-color: rgb(17, 65, 114);
+  color: #fff;
+}
+.profile__links {
+  margin-top: 1rem;
+}
+.profile__data_grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.profile__data_title {
+  font-size: 0.9rem;
+  margin: 1.25rem 0 0.38rem 0;
   font-weight: bold;
-  display: block;
-  margin-bottom: 1rem;
+}
+.profile__data_info {
+  font-size: 0.8rem;
+}
+.economic_section {
+  margin-bottom: 3rem;
+}
+.economic_data_flex {
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+}
+.profile__economic_data h4 {
+  color: var(--color2);
+  margin-bottom: 0.8rem;
+  font-size: 0.92rem;
+}
+
+.spend__indicators {
+  display: flex;
+  margin-top: 3rem;
+  justify-content: space-between;
+  max-width: 95%;
 }

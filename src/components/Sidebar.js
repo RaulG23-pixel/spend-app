@@ -10,9 +10,6 @@ function Sidebar(props) {
       <section>
         <div className="sidebar__header">
           <h3>SpendApp</h3>
-          <button className="hamburger">
-            <i className="fas fa-bars"></i>
-          </button>
         </div>
         <ul className="sidebar_links">
           <NavLink to="/dashboard">
