@@ -2,7 +2,7 @@ import React from "react";
 import { Line } from "react-chartjs-2";
 function LineChart() {
   const windowWidth = window.innerWidth;
-  const lineChartHeight = windowWidth < 768 ? 200 : 166;
+  const lineChartHeight = windowWidth < 768 ? 200 : 136;
   return (
     <div className="line_chart chart">
       <>

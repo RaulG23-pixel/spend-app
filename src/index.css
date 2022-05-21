@@ -402,6 +402,26 @@ ul.dropdown {
   transform: rotate(180deg);
 }
 /*charts and data*/
+.chart {
+  padding: 1rem 1.4rem;
+  border-radius: 10px;
+  margin-bottom: 4rem;
+  box-shadow: 1px 3px 5px 1px rgba(0, 0, 0, 0.3);
+}
+.chart:last-child {
+  margin-bottom: 0;
+}
+@media screen and (min-width: 768px) {
+  .chart {
+    margin-bottom: 2rem;
+  }
+}
+.chart h3 {
+  margin-bottom: 1.4rem;
+  color: rgb(7, 25, 107);
+  font-size: 1.3rem;
+  margin-top: 0.4rem;
+}
 .graphics {
   width: 100%;
   margin-top: 20px;
@@ -459,26 +479,6 @@ ul.dropdown {
   }
 }
 
-.chart {
-  padding: 1rem 1.4rem;
-  border-radius: 10px;
-  margin-bottom: 4rem;
-  box-shadow: 1px 3px 5px 1px rgba(0, 0, 0, 0.3);
-}
-.chart:last-child {
-  margin-bottom: 0;
-}
-@media screen and (min-width: 768px) {
-  .chart {
-    margin-bottom: 2rem;
-  }
-}
-.chart h3 {
-  margin-bottom: 1.4rem;
-  color: rgb(7, 25, 107);
-  font-size: 1.3rem;
-  margin-top: 0.4rem;
-}
 /*Table*/
 .table__container {
   flex: 4;
@@ -692,6 +692,7 @@ td {
 }
 .profile__data_info {
   font-size: 0.8rem;
+  margin-left: 8px;
 }
 .economic_section {
   margin-bottom: 3rem;
