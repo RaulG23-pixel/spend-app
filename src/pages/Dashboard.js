@@ -1,6 +1,6 @@
 import React, { useEffect, useContext, useState } from "react";
 import { Redirect } from "react-router-dom";
-import { getUser } from "../services/service";
+import { getUser } from "../services/userService";
 import { storeContext } from "../store/StoreProvider";
 import Sidebar from "../components/Sidebar";
 import Graphics from "../components/Graphics";

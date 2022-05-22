@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Redirect } from "react-router-dom";
 import useForm from "../helpers/useForm";
 import validateInfo from "../helpers/validate";
-import { logIn } from "../services/service";
+import { logIn } from "../services/userService";
 
 function Login() {
   const [isLogged, setIsLogged] = useState(false);
