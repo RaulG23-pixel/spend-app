@@ -1,19 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { Redirect } from "react-router-dom";
+import React from "react";
+import { useSelector } from "react-redux";
 
 function Home() {
-  const [isLogged, setIsLogged] = useState(false);
-  let token = localStorage.getItem("access_token");
-  useEffect(() => {
-    if (token) {
-      setIsLogged(true);
-    }
-  }, [token, setIsLogged]);
-  if (isLogged) {
-    return <Redirect to="/dashboard" />;
-  }
   return (
-    <div>
+    <div className="landing__page">
       <h1>Home</h1>
     </div>
   );

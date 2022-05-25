@@ -1,29 +1,14 @@
-import React, { useEffect, useContext, useState } from "react";
+import React, { useEffect, useState } from "react";
 import useForm from "../helpers/useForm";
 import validateInfo from "../helpers/validate";
 import { Redirect } from "react-router-dom";
-import { createUser } from "../services/service";
-import { storeContext } from "../store/StoreProvider";
+import { createUser } from "../services/userService";
 
 function Register() {
-  const [dispatch] = useContext(storeContext);
   const [isRegistered, setIsRegistered] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const { handleSubmit, handleKeyUp, errors, isSubmitted, user } =
     useForm(validateInfo);
-
-  useEffect(() => {
-    if (isSubmitted) {
-      setIsLoading(true);
-      createUser(user)
-        .then((response) => {
-          localStorage.setItem("access_token", response.data.access_token);
-          setIsLoading(false);
-          setIsRegistered(true);
-        })
-        .catch((error) => console.log(error));
-    }
-  }, [isSubmitted, user, dispatch]);
 
   if (isRegistered) {
     return <Redirect to="/dashboard" />;

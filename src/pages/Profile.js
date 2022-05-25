@@ -1,37 +1,16 @@
-import React, { useEffect, useContext, useState } from "react";
-import { Redirect } from "react-router-dom";
-import { getUser } from "../services/service";
-import { storeContext } from "../store/StoreProvider";
-import { getAccessToken } from "../utils/utils";
+import React, { useState } from "react";
 import Sidebar from "../components/Sidebar";
 import esqueleto from "../assets/esqueleto.jpg";
 import ProfileData from "../components/ProfileData";
 import EditProfileData from "../components/EditProfileData";
+import { useSelector } from "react-redux";
 
 function Profile() {
-  const [store, dispatch] = useContext(storeContext);
-  const token = getAccessToken();
-  const [user, setUser] = useState();
-  const [isLogged, setIsLogged] = useState(false);
   const [isEdit, setIsEdit] = useState(false);
 
-  useEffect(() => {
-    const fetchUser = async () => {
-      const { data } = await getUser(token);
-      dispatch({ type: "set-user", payload: data });
-      setIsLogged(true);
-    };
-    if (!store.user && !isLogged) {
-      fetchUser();
-    }
-    if (store.user) setUser(store.user.username);
-  }, [isLogged, dispatch, token, store.user]);
-
-  if (!token) {
-    return <Redirect to="/login" />;
-  }
-
-  if (store.user) {
+  const user = useSelector((state) => state.value);
+  const { username } = user;
+  if (user) {
     return (
       <>
         <div className="app_container">
@@ -47,7 +26,7 @@ function Profile() {
                   <img src={esqueleto} alt="avatar" />
                 </div>
                 <div className="user__header__data">
-                  <span className="user__header__title">{user}</span>
+                  <span className="user__header__title">{username}</span>
                   <span className="subtitle user__header__subtitle">
                     Your personal account
                   </span>
@@ -76,7 +55,7 @@ function Profile() {
               }
             </section>
           </section>
-          <Sidebar user={user} />
+          <Sidebar user={username} />
         </div>
       </>
     );

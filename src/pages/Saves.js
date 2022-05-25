@@ -1,36 +1,14 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Redirect } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
-import { storeContext } from "../store/StoreProvider";
 import { getAccessToken } from "../utils/utils";
-import { getUser } from "../services/service";
+import { useSelector } from "react-redux";
 
 function Saves() {
-  const [store, dispatch] = useContext(storeContext);
-  const [isLogged, setIsLogged] = useState(false);
-  const [user, setUser] = useState(null);
-  const token = getAccessToken();
-  useEffect(() => {
-    const fetchUser = async () => {
-      const { data } = await getUser(token);
-      dispatch({ type: "set-user", payload: data });
-      setIsLogged(true);
-    };
-    if (!store.user && !isLogged) {
-      fetchUser();
-    }
-    if (store.user) setUser(store.user.username);
-  }, [dispatch, token, isLogged, store.user]);
+  const user = useSelector((state) => state.value);
 
-  if (!token) {
-    return <Redirect to="/login" />;
-  }
-
-  if (!token) {
-    return <Redirect to="/login" />;
-  }
-
-  if (store.user) {
+  if (user) {
+    const { username } = user;
     return (
       <>
         <div className="app_container">
@@ -41,7 +19,7 @@ function Saves() {
             </header>
             <section></section>
           </section>
-          <Sidebar user={user} />
+          <Sidebar user={username} />
         </div>
       </>
     );
