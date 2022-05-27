@@ -2,7 +2,7 @@ import React from "react";
 import { Line } from "react-chartjs-2";
 function LineChart() {
   const windowWidth = window.innerWidth;
-  const lineChartHeight = windowWidth < 768 ? 200 : 136;
+  const lineChartHeight = windowWidth < 768 ? 200 : 156;
   return (
     <div className="line_chart chart">
       <>
@@ -24,7 +24,7 @@ function LineChart() {
                 data: [0, 27, 5, 32, 17, 18, 45],
                 backgroundColor: "white",
                 borderColor: "dodgerblue",
-                tension: 0.3,
+                tension: 0.4,
               },
             ],
           }}

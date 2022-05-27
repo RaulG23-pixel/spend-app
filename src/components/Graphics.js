@@ -1,8 +1,8 @@
 import React from "react";
-import BarChart from "./BarChart";
+import BarChart from "./charts/BarChart";
 import DataTable from "./DataTable";
-import DoughnutChart from "./DoughnutChart";
-import LineChart from "./LineChart";
+import DoughnutChart from "./charts/DoughnutChart";
+import LineChart from "./charts/LineChart";
 function Graphics() {
   return (
     <div className="graphics">

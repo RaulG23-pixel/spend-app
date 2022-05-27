@@ -403,10 +403,11 @@ ul.dropdown {
 }
 /*charts and data*/
 .chart {
-  padding: 1rem 1.4rem;
+  padding: 1rem 1.2rem;
   border-radius: 10px;
+  height: 20.7rem;
   margin-bottom: 4rem;
-  box-shadow: 1px 3px 5px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.2);
 }
 .chart:last-child {
   margin-bottom: 0;
@@ -457,7 +458,7 @@ ul.dropdown {
 }
 @media screen and (min-width: 768px) {
   .bar_chart {
-    flex: 0 0 calc(38%);
+    flex: 0 0 calc(35%);
   }
   .doughnut_chart {
     flex: 0 0 calc(20%);
@@ -691,7 +692,6 @@ td {
 }
 .profile__data_info {
   font-size: 0.8rem;
-  margin-left: 8px;
 }
 .economic_section {
   margin-bottom: 3rem;
@@ -707,13 +707,48 @@ td {
   font-size: 0.92rem;
 }
 
+/*spends*/
 .spend__indicators {
   display: flex;
-  margin-top: 3rem;
-  justify-content: space-between;
-  max-width: 95%;
+  margin-top: 1.45rem;
+  justify-content: space-around;
+  max-width: 80%;
+  height: 20rem;
 }
 
+.spend__dataList {
+  list-style: none;
+  padding: 0;
+}
+.spend__dataList li {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+.percentage_displayer {
+  margin-top: 4rem;
+}
+.dataList_color_reference {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-right: 0.4rem;
+  background: blue;
+}
+.dataList_pink {
+  background: rgb(255, 99, 132);
+}
+.dataList_yellow {
+  background: rgb(255, 205, 86);
+}
+.dataList_blue {
+  background: rgb(54, 162, 235);
+}
+.data_percentage {
+  font-weight: bold;
+  display: inline-block;
+}
+/*Landing*/
 .landing__page {
   display: flex;
   flex-direction: column;

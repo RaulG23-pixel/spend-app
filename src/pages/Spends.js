@@ -4,6 +4,7 @@ import Sidebar from "../components/Sidebar";
 import { getAccessToken } from "../utils/utils";
 import { getUser } from "../services/userService";
 import { useSelector } from "react-redux";
+import Indicator from "../components/indicators/Indicator";
 
 function CreateSpend() {
   const user = useSelector((state) => state.value);
@@ -21,9 +22,24 @@ function CreateSpend() {
             </header>
             <section>
               <div className="spend__indicators">
-                <div>a</div>
-                <div>b</div>
-                <div>c</div>
+                <Indicator />
+                <article className="percentage_displayer">
+                  <h4>Data</h4>
+                  <ul className="spend__dataList">
+                    <li>
+                      <span className="dataList_color_reference dataList_yellow"></span>{" "}
+                      <span className="data_percentage">1%</span>
+                    </li>
+                    <li>
+                      <span className="dataList_color_reference dataList_pink"></span>
+                      <span className="data_percentage">2%</span>
+                    </li>
+                    <li>
+                      <span className="dataList_color_reference dataList_blue"></span>
+                      <span className="data_percentage">3%</span>
+                    </li>
+                  </ul>
+                </article>
               </div>
             </section>
           </section>
