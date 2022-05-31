@@ -21,7 +21,7 @@ function PieChart() {
     <Pie
       data={data}
       options={{
-        radius: "80%",
+        radius: "96%",
         Response: true,
         autoPadding: false,
         maintainAspectRatio: false,

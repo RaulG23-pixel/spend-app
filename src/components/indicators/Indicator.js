@@ -5,7 +5,6 @@ import "./style.css";
 function Indicator() {
   return (
     <div className="spends__graphic_container">
-      <h1>Spends graphic</h1>
       <PieChart />
     </div>
   );
