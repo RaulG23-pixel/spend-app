@@ -12,7 +12,7 @@ function Counters() {
           easing: "linear",
           round: true,
           duration: 800,
-          delay: 400,
+          delay: 650,
         },
         {
           targets: "#counter2",

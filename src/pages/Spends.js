@@ -23,11 +23,9 @@ function CreateSpend() {
               </span>
             </header>
             <section className="spend__graphic_section">
-              <h2 className="spend__section_title">Summary</h2>
               <section className="spend__indicators">
                 <Indicator />
                 <article className="percentage_displayer">
-                  <h4>Data</h4>
                   <ul className="spend__dataList">
                     <Anime
                       initial={[
@@ -54,44 +52,99 @@ function CreateSpend() {
                         },
                       ]}
                     >
-                      <li>
-                        <span className="dataList_color_reference dataList_yellow"></span>{" "}
+                      <li className="dataList_item">
                         <div>
+                          <span className="dataList_color_reference dataList_yellow"></span>{" "}
                           <span className="dataList_title">Total</span>
-                          <span className="data_percentage" id="percentage1">
-                            80%
-                          </span>
                         </div>
+                        <span className="data_percentage" id="percentage1">
+                          80%
+                        </span>
                       </li>
-                      <li>
-                        <span className="dataList_color_reference dataList_pink"></span>
+                      <li className="dataList_item">
                         <div>
+                          <span className="dataList_color_reference dataList_pink"></span>
                           <span className="dataList_title">Completed</span>
-                          <span className="data_percentage" id="percentage2">
-                            92%
-                          </span>
                         </div>
+                        <span className="data_percentage" id="percentage2">
+                          92%
+                        </span>
                       </li>
-                      <li>
-                        <span className="dataList_color_reference dataList_blue"></span>
+                      <li className="dataList_item">
                         <div>
+                          <span className="dataList_color_reference dataList_blue"></span>
                           <span className="dataList_title">Incomplete</span>
-                          <span className="data_percentage" id="percentage3">
-                            73%
-                          </span>
                         </div>
+                        <span className="data_percentage" id="percentage3">
+                          73%
+                        </span>
                       </li>
                     </Anime>
                   </ul>
                 </article>
               </section>
             </section>
-            <section className="spend__create_banner">
-              <h2>Create spend</h2>
-              <span>You need to create a new spend</span>
-              <button>Create spend</button>
-              <i class="fas fa-book spend__banner_icon"></i>
-            </section>
+            <div className="creation_and_frequents">
+              <section className="spend__create_banner">
+                <h2>Create spend</h2>
+                <span>
+                  You need to create a new spend? No problem, in the create
+                  section you can create a new one.
+                </span>
+                <button>Create spend</button>
+                <i class="fas fa-book spend__banner_icon"></i>
+              </section>
+              <section className="spend__frecuent_spends">
+                <h2>Frecuent spends</h2>
+                <ul className="frecuent_spends_container">
+                  <li className="frecuent_spend_item">
+                    <div className="color_indicator bar1"></div>
+                    <div className="frecuent_spend_data">
+                      <h4 className="item_title">Saldo telefono</h4>
+                      <div className="progress_container">
+                        <div className="progress_bar">
+                          <div
+                            className="bar bar1"
+                            style={{ width: "50%" }}
+                          ></div>
+                        </div>
+                        <span>50%</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li className="frecuent_spend_item">
+                    <div className="color_indicator bar2"></div>
+                    <div className="frecuent_spend_data">
+                      <h4 className="item_title">chocolates</h4>
+                      <div className="progress_container">
+                        <div className="progress_bar">
+                          <div
+                            className="bar bar2"
+                            style={{ width: "40%" }}
+                          ></div>
+                        </div>
+                        <span>40%</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li className="frecuent_spend_item">
+                    <div className="color_indicator bar3"></div>
+                    <div className="frecuent_spend_data">
+                      <h4 className="item_title">Rufles</h4>
+                      <div className="progress_container">
+                        <div className="progress_bar">
+                          <div
+                            className="bar bar3"
+                            style={{ width: "60%" }}
+                          ></div>
+                        </div>
+                        <span>60%</span>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </section>
+            </div>
             <section className="dataTable_section">
               <h2 className="spend__section_title">Latest spends</h2>
               <DataTable />

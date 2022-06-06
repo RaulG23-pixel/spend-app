@@ -711,14 +711,15 @@ td {
   margin-top: 2.3rem;
   margin-bottom: 1.6rem;
 }
+/*Banner*/
 .spend__create_banner {
   background: dodgerblue;
   padding: 1.8rem;
   color: white;
   border-radius: 10px;
-  margin-bottom: 6rem;
-  margin-top: 1.3rem;
-  width: 80%;
+  margin-right: 30px;
+  width: 42%;
+  height: 12rem;
   position: relative;
 }
 .spend__create_banner h2 {
@@ -726,33 +727,40 @@ td {
 }
 .spend__create_banner span {
   font-size: 13px;
+  width: 67%;
+  line-height: 22px;
+  display:block;
 }
 .spend__create_banner button {
-  display: inline-block;
-  margin-left: 16px;
+  display: block;
+  width:max-content;
+  margin-top: 1.7rem;
+  font-weight: 500;
   border: none;
-  padding: 8px 15px;
+  padding: 10px 22px;
   color: dodgerblue;
-  border-radius: 6px;
+  border-radius: 15px;
   cursor: pointer;
   background-color: #fff;
   transition: all 0.3s linear;
 }
 .spend__create_banner button:hover {
-  background-color: darkblue;
+  background-color: rgb(9, 53, 173);
   color: #fff;
 }
 .spend__banner_icon {
   position: absolute;
-  top: 1.9rem;
-  right: 2rem;
-  font-size: 85px;
+  top: 4rem;
+  right: 2.7rem;
+  font-size: 72px;
   color: rgba(255, 255, 255, 0.7);
 }
+
+/*spend graphic section*/
 .spend__graphic_section {
   display: block;
-  margin-bottom: 7.8rem;
-  margin-top: 0.6rem;
+  margin-bottom: 9rem;
+  margin-top:4rem;
 }
 .spend__indicators {
   display: flex;
@@ -766,19 +774,21 @@ td {
   margin-bottom: 2rem;
   font-size: 1.6rem;
 }
-
+/*data list*/
 .spend__dataList {
   list-style: none;
   padding: 0;
 }
-.spend__dataList li {
-  margin-bottom: 1rem;
+.dataList_item {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   width: 11rem;
+  padding: 1rem 0;
 }
 .percentage_displayer {
-  margin-top: 6rem;
+  margin-top: 2.1rem;
+  margin-left: 2rem;
 }
 .dataList_color_reference {
   display: inline-block;
@@ -797,15 +807,81 @@ td {
   background: rgb(54, 162, 235);
 }
 .data_percentage {
-  font-weight: bold;
+  font-weight: 500;
   display: inline;
-  margin-left: 3px;
+  font-size: 1.7rem;
   position: relative;
 }
 .dataList_title {
   display: inline-block;
   margin-right: 1rem;
+  font-size: 13px;
+  margin-bottom: .6rem;
   color: var(--dark_grey);
+}
+.creation_and_frequents{
+  display:flex;
+}
+.spend__frecuent_spends{
+  border: 1px solid rgb(224, 224, 224);
+  width: 41%;
+  border-radius: 10px;
+  padding: .8rem 2rem;
+}
+.spend__frecuent_spends h2{
+  font-size: 1.12rem;
+  margin: .7rem 0;
+}
+.spend__frecuent_spends ul{
+  list-style: none;
+  padding:0;
+}
+.frecuent_spend_item{
+  padding: .6rem 0;
+  display: flex;
+  align-items: center;
+}
+.frecuent_spend_data{
+  flex:1;
+}
+.item_title{
+  font-size: .86rem;
+  font-weight: 400;
+  margin: 0 0 .34rem 0;
+  color: var(--dark_grey);
+}
+.progress_container{
+  display:flex;
+  align-items: center;
+}
+.progress_bar{
+  width:90%;
+  height: 10px;
+  margin-right: 10px;
+  border-radius: 8px;
+}
+.progress_container span{
+  font-weight: bold;
+}
+.bar{
+  border-radius: 8px;
+  height: 100%;
+  width: 70%;
+}
+.bar1{
+  background-color: dodgerblue;
+}
+.bar2{
+  background-color: orange;
+}
+.bar3{
+  background-color: rgb(220, 20, 87);
+}
+.color_indicator{
+  width:31px;
+  height:31px;
+  border-radius: 50%;
+  margin-right: 14px;
 }
 
 /*Landing*/
