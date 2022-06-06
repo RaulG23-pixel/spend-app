@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Redirect } from "react-router-dom";
+import React from "react";
 import Sidebar from "../components/Sidebar";
-import { getAccessToken } from "../utils/utils";
 import { useSelector } from "react-redux";
 
 function Saves() {

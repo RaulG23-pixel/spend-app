@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Sidebar from "../components/Sidebar";
 import { useSelector } from "react-redux";
 import Indicator from "../components/indicators/Indicator";

@@ -3,7 +3,6 @@ import { Doughnut } from "react-chartjs-2";
 
 function DoughtnutChart() {
   const windowWidth = window.innerWidth;
-  const DoughnutHeight = windowWidth < 768 ? 200 : 60;
   const radius = windowWidth < 768 ? "60%" : "80%";
   return (
     <div className="doughnut_chart chart">
