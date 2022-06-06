@@ -39,13 +39,13 @@ function Profile() {
                   onClick={() => setIsEdit(false)}
                   className={`button button-edit ${!isEdit ? "active" : ""}`}
                 >
-                  Profile
+                  <i class="fas fa-address-book"></i> Profile
                 </button>
                 <button
                   onClick={() => setIsEdit(true)}
                   className={`button button-edit ${isEdit ? "active" : ""}`}
                 >
-                  Edit
+                  <i class="fas fa-edit"></i> Edit
                 </button>
               </nav>
               {

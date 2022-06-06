@@ -2,7 +2,7 @@
   --color1: rgb(16, 41, 180);
   --color2: rgb(11, 88, 204);
   --grey: rgb(167, 165, 165);
-  --dark_grey: rgb(82, 81, 81);
+  --dark_grey: rgb(95, 94, 94);
   --sidebar: rgb(16, 101, 180);
   --sidebar_footer: rgb(5, 27, 48);
   --config: rgb(14, 73, 128);
@@ -499,9 +499,11 @@ ul.dropdown {
 }
 
 .table__title {
-  border-bottom: 2px solid var(--purple);
   text-align: center;
   border-radius: 8px 8px 0 0;
+  background: rgb(20, 16, 41);
+  color: #fff;
+  font-size: 14px;
 }
 .table,
 th,
@@ -512,11 +514,7 @@ td {
 .table td {
   padding: 1rem;
 }
-.table th {
-  border-bottom: 2px solid var(--purple);
-  color: rgb(41, 40, 40);
-  font-size: 14px;
-}
+
 .table td {
   font-size: 14px;
 }
@@ -529,7 +527,7 @@ td {
   flex-direction: row;
   flex-direction: column;
   flex-wrap: wrap;
-  margin-top: 1.5rem;
+  margin-top: 2.1rem;
 }
 @media screen and (min-width: 768px) {
   .counters {
@@ -562,7 +560,7 @@ td {
   background: rgb(66, 84, 185);
 }
 .counter_3 {
-  background: rgb(230, 183, 57);
+  background: rgb(253, 209, 15);
 }
 .counter_4 {
   background: rgb(250, 112, 146);
@@ -707,23 +705,66 @@ td {
 }
 
 /*spends*/
+.spend__section_title {
+  font-weight: 300;
+  font-size: 1.6rem;
+  margin-top: 2.3rem;
+  margin-bottom: 1.6rem;
+}
+.spend__create_banner {
+  background: dodgerblue;
+  padding: 1.8rem;
+  color: white;
+  border-radius: 10px;
+  margin-bottom: 6rem;
+  margin-top: 1.3rem;
+  width: 80%;
+  position: relative;
+}
+.spend__create_banner h2 {
+  margin: 1rem 0;
+}
+.spend__create_banner span {
+  font-size: 13px;
+}
+.spend__create_banner button {
+  display: inline-block;
+  margin-left: 16px;
+  border: none;
+  padding: 8px 15px;
+  color: dodgerblue;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #fff;
+  transition: all 0.3s linear;
+}
+.spend__create_banner button:hover {
+  background-color: darkblue;
+  color: #fff;
+}
+.spend__banner_icon {
+  position: absolute;
+  top: 1.9rem;
+  right: 2rem;
+  font-size: 85px;
+  color: rgba(255, 255, 255, 0.7);
+}
 .spend__graphic_section {
   display: block;
-  margin-bottom: 10rem;
+  margin-bottom: 7.8rem;
+  margin-top: 0.6rem;
 }
 .spend__indicators {
   display: flex;
-  margin-top: 1.45rem;
   justify-content: space-around;
   max-width: 77%;
   margin: 2rem auto 0 auto;
   height: 22rem;
 }
 .indicator_title {
-  margin-top: 2rem;
-  margin-bottom: 3.2rem;
-  font-size: 1.8rem;
-  text-align: center;
+  margin-top: 2.9rem;
+  margin-bottom: 2rem;
+  font-size: 1.6rem;
 }
 
 .spend__dataList {
@@ -758,16 +799,13 @@ td {
 .data_percentage {
   font-weight: bold;
   display: inline;
-  margin-left: 8px;
+  margin-left: 3px;
   position: relative;
 }
 .dataList_title {
   display: inline-block;
   margin-right: 1rem;
   color: var(--dark_grey);
-}
-
-.dataTable_section {
 }
 
 /*Landing*/

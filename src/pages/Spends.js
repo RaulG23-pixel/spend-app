@@ -3,6 +3,7 @@ import Sidebar from "../components/Sidebar";
 import { useSelector } from "react-redux";
 import Indicator from "../components/indicators/Indicator";
 import ReactAnime from "react-animejs";
+import DataTable from "../components/DataTable";
 
 function CreateSpend() {
   const { Anime } = ReactAnime;
@@ -22,7 +23,7 @@ function CreateSpend() {
               </span>
             </header>
             <section className="spend__graphic_section">
-              <h2 className="indicator_title">Spends graphic</h2>
+              <h2 className="spend__section_title">Summary</h2>
               <section className="spend__indicators">
                 <Indicator />
                 <article className="percentage_displayer">
@@ -85,8 +86,15 @@ function CreateSpend() {
                 </article>
               </section>
             </section>
+            <section className="spend__create_banner">
+              <h2>Create spend</h2>
+              <span>You need to create a new spend</span>
+              <button>Create spend</button>
+              <i class="fas fa-book spend__banner_icon"></i>
+            </section>
             <section className="dataTable_section">
-              <h2>Hola</h2>
+              <h2 className="spend__section_title">Latest spends</h2>
+              <DataTable />
             </section>
           </section>
           <Sidebar user={username} />
