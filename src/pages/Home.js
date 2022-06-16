@@ -1,5 +1,6 @@
 import React from "react";
 import ilustration from "../assets/ilustration1.svg";
+import { NavLink } from "react-router-dom";
 
 function Home() {
   return (
@@ -46,7 +47,9 @@ function Home() {
           <div className="hero__text">
             <h1>Spend analytics with one click</h1>
             <p>Explore a new definition of data visualization with our tools</p>
-            <button className="btn_hero">Get started</button>
+            <NavLink className="btn_hero" to="/login">
+              Get started
+            </NavLink>
           </div>
           <img
             src={ilustration}
@@ -55,6 +58,21 @@ function Home() {
           />
         </div>
       </header>
+      <section className="about__section" id="about">
+        <h2>About</h2>
+      </section>
+      <section className="features__section" id="features">
+        <h2>features</h2>
+      </section>
+      <section className="overview__section" id="overview">
+        <h2>overview</h2>
+      </section>
+      <section className="regards__section" id="regards">
+        <h2>regards</h2>
+      </section>
+      <footer className="landing__footer">
+        <span>Created by Raul Gonzalez</span>
+      </footer>
     </div>
   );
 }
