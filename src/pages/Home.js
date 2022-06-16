@@ -1,5 +1,6 @@
 import React from "react";
 import ilustration from "../assets/ilustration1.svg";
+import ilustration2 from "../assets/ilustration2.svg";
 import { NavLink } from "react-router-dom";
 
 function Home() {
@@ -54,12 +55,32 @@ function Home() {
           <img
             src={ilustration}
             alt="ilustration"
-            className="hero_ilustration"
+            className="hero__ilustration"
           />
         </div>
       </header>
       <section className="about__section" id="about">
-        <h2>About</h2>
+        <div className="about__flex container">
+          <img
+            src={ilustration2}
+            alt="about ilustration"
+            className="about__ilustration"
+          />
+          <div className="about__text">
+            <h3 className="about__heading">
+              Monitorize your spends and savings has never been so easy
+            </h3>
+            <p className="about__paragraph">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel
+              urna ipsum. Curabitur vestibulum malesuada gravida. Morbi non dui
+              nisi. Donec laoreet nisi vitae felis pulvinar, eget interdum dolor
+              placerat. Integer posuere quis nibh sit amet viverra. Duis
+              fringilla laoreet metus eu pellentesque. Aenean ac magna sit amet
+              velit auctor euismod eu efficitur ipsum. Nunc et pharetra nunc, et
+              semper enim. Vestibulum ante ipsum primis in faucibus orci luctus.
+            </p>
+          </div>
+        </div>
       </section>
       <section className="features__section" id="features">
         <h2>features</h2>

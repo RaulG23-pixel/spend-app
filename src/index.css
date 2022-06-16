@@ -898,6 +898,7 @@ td {
   display: flex;
   flex-direction: column;
   position: relative;
+  overflow:hidden;
   margin-bottom: 2.9rem
 }
 
@@ -977,8 +978,8 @@ td {
   margin: auto;
   margin-top: 5.4rem;
 }
-.hero_ilustration {
-  width: 303px;
+.hero__ilustration {
+  width: 335px;
 }
 .btn_hero {
   background: #fff;
@@ -999,12 +1000,12 @@ td {
   color: white;
 }
 .landing__page section{
-  height: 102vh;
+  height: 96vh;
   text-align: center;
 }
 .landing__page section h2{
-  font-size: 2.3rem;
-  margin-top: 1.4rem;
+  font-size: 1.8rem;
+  margin-top: 2rem;
   color: dodgerblue;
 }
 .landing__footer{
@@ -1018,4 +1019,33 @@ td {
   display: inline-block;
   margin-top: 10px;
   font-size: 14px;
+}
+
+.about__flex{
+  display: flex;
+  padding: 5rem 0;
+  flex-direction: column;
+}
+@media screen and (min-width: 768px) {
+  .about__flex{
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 4rem;
+  }
+}
+.about__text{
+  width: 38%;
+  text-align: left;
+}
+.about__ilustration{
+  width:60%;
+}
+.about__paragraph{
+  font-size: 13px;
+  line-height: 20px;
+  
+}
+.about__heading{
+  color:#0481d4;
+  font-size: 2.1rem;
 }
