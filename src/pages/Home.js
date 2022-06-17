@@ -48,7 +48,7 @@ function Home() {
           <div className="hero__text">
             <h1>Spend analytics with one click</h1>
             <p>Explore a new definition of data visualization with our tools</p>
-            <NavLink className="btn_hero" to="/login">
+            <NavLink className="btn_landing btn_hero" to="/login">
               Get started
             </NavLink>
           </div>
@@ -75,15 +75,20 @@ function Home() {
               urna ipsum. Curabitur vestibulum malesuada gravida. Morbi non dui
               nisi. Donec laoreet nisi vitae felis pulvinar, eget interdum dolor
               placerat. Integer posuere quis nibh sit amet viverra. Duis
-              fringilla laoreet metus eu pellentesque. Aenean ac magna sit amet
-              velit auctor euismod eu efficitur ipsum. Nunc et pharetra nunc, et
-              semper enim. Vestibulum ante ipsum primis in faucibus orci luctus.
+              fringilla laoreet metus eu pellentesque.
             </p>
+            <NavLink to="/login" className="btn_landing btn_about">
+              Get started
+            </NavLink>
           </div>
         </div>
+        <div className="circle c_big clearBlue pos-1"></div>
+        <div className="circle c_small ring_clblue pos-2"></div>
+        <div className="circle c_medium mediumBlue pos-3"></div>
+        <div className="circle c_small mediumBlue pos-4"></div>
       </section>
       <section className="features__section" id="features">
-        <h2>features</h2>
+        <h2>Some of the best features from the app</h2>
       </section>
       <section className="overview__section" id="overview">
         <h2>overview</h2>

@@ -912,7 +912,7 @@ td {
   text-decoration: none;
 }
 .landing__nav .logo {
-  font-size: 1.4rem;
+  font-size: 1.46rem;
   color: rgb(255, 255, 255);
   font-weight: 600;
   padding: 0.3rem 0;
@@ -974,31 +974,36 @@ td {
 .hero {
   display: flex;
   justify-content: space-between;
-  width: 75%;
-  margin: auto;
   margin-top: 5.4rem;
 }
 .hero__ilustration {
   width: 335px;
 }
-.btn_hero {
-  background: #fff;
+.btn_landing{
   display:inline-block;
-  color: dodgerblue;
   border: none;
-  font-size: 16px;
+  font-size: 15px;
   text-decoration: none;
   margin-top: 7px;
   font-weight: 600;
   border-radius: 18px;
-  padding: 0.5rem 2rem;
+  padding: 0.6rem 2rem;
   cursor: pointer;
   transition: all 0.3s linear;
 }
-.btn_hero:hover {
+.btn_hero{
+  background: #fff;
+  color: dodgerblue;
+}
+.btn_landing:hover {
   background: black;
   color: white;
 }
+.btn_about{
+  background: dodgerblue;
+  color: #fff;
+}
+
 .landing__page section{
   height: 96vh;
   text-align: center;
@@ -1009,7 +1014,7 @@ td {
   color: dodgerblue;
 }
 .landing__footer{
-  height: 2rem;
+  height: 1.7rem;
   background-color: dodgerblue;
   color: white;
   padding: 1.3rem;
@@ -1019,18 +1024,22 @@ td {
   display: inline-block;
   margin-top: 10px;
   font-size: 14px;
+  font-weight: bold;
+}
+.about__section{
+  position:relative;
 }
 
 .about__flex{
   display: flex;
-  padding: 5rem 0;
+  padding: 5.6rem 0 3rem 0;
   flex-direction: column;
 }
 @media screen and (min-width: 768px) {
   .about__flex{
     flex-direction: row;
     justify-content: space-between;
-    margin-top: 4rem;
+    margin-top: 5.5rem;
   }
 }
 .about__text{
@@ -1042,10 +1051,64 @@ td {
 }
 .about__paragraph{
   font-size: 13px;
-  line-height: 20px;
+  line-height: 23px;
   
+}
+.about__text .btn_about{
+  margin-top: .6rem;
 }
 .about__heading{
   color:#0481d4;
-  font-size: 2.1rem;
+  font-size: 2.05rem;
+}
+.circle{
+  border-radius: 50%;
+  position: absolute;
+}
+.c_small{
+  width: 40px;
+  height: 40px;
+}
+.c_medium{
+  width: 120px;
+  height: 120px;
+}
+.c_big{
+  width: 200px;
+  height: 200px;
+}
+.clearBlue{
+  background-color: rgba(167, 211, 255,0.8);
+}
+.mediumBlue{
+  background-color: #51b1f1ce;
+}
+.darkBlue{
+  background-color: dodgerblue;
+}
+.ring_clblue {
+  border: 3px solid rgba(167, 211, 255, 0.7);
+}
+.ring_mdblue{
+  border: 3px solid #73c2f7;
+}
+.ring_dkblue{
+  border: 3px solid dodgerblue;
+}
+
+.pos-1{
+  right: -6rem;
+  top: -0.6rem;
+}
+.pos-2{
+  left: 1rem;
+  bottom:5rem;
+}
+.pos-3{
+  right: 2rem;
+  bottom: 2rem;
+}
+.pos-4{
+  top: 2rem;
+  left: 2rem;
 }
