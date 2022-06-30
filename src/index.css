@@ -904,11 +904,11 @@ td {
 }
 .blob{
   position: absolute;
+  z-index: 1;
 }
 .blob-1{
   width: 340px;
   top: 2rem;
-  z-index: 1;
   left: -11.5rem;
 }
 .blob-2{
@@ -916,6 +916,11 @@ td {
   top:-3rem;
   right:-7rem;
 
+}
+.blob-3{
+  width: 350px;
+  bottom: 5rem;
+  left: 34rem;
 }
 .blob path{
   fill: rgba(255,255,255,0.1);
@@ -925,6 +930,8 @@ td {
   justify-content: space-between;
   padding: 1.3rem 0;
   align-items: center;
+  position:relative;
+  z-index: 2;
 }
 .landing__nav a {
   text-decoration: none;
@@ -1141,24 +1148,44 @@ td {
   position:relative;
   margin:4rem 0;
   background-color: rgb(15, 102, 233);
+  z-index: -2;
+  overflow: hidden;
   display:flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 5rem 0;
 }
 
 .landing__page .features__section h2{
   color:rgb(255,255,255);
-  margin-top: 1rem;
+  margin-top: .9rem;
 }
 .wave_top{
   position:absolute;
-  top:-2rem;
+  transform: rotate(5deg);
+  top:-5.2rem;
+  width: 105%;
   left:0;
 }
 .wave_bottom{
   position:absolute;
   bottom: -2rem;
+  transform: rotate(2deg);
+  width:110%;
   left:0;
+}
+.features_box{
+  margin-top: 9rem;
+}
+.features__flex{
+  display:flex;
+  margin-top: 3.3rem;
+  justify-content: space-between;
+  align-items: center;
+}
+.feature{
+  background-color: #fff;
+  padding: 1.5rem 2rem;
+  border-radius: 10px;
 }

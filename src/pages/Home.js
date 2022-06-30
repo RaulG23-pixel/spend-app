@@ -72,7 +72,7 @@ function Home() {
         <svg
           viewBox="0 0 200 200"
           xmlns="http://www.w3.org/2000/svg"
-          className="blob"
+          className="blob blob-3"
         >
           <path
             fill="#F2F4F8"
@@ -135,8 +135,28 @@ function Home() {
             d="M0,224L30,224C60,224,120,224,180,213.3C240,203,300,181,360,192C420,203,480,245,540,266.7C600,288,660,288,720,256C780,224,840,160,900,133.3C960,107,1020,117,1080,128C1140,139,1200,149,1260,138.7C1320,128,1380,96,1410,80L1440,64L1440,0L1410,0C1380,0,1320,0,1260,0C1200,0,1140,0,1080,0C1020,0,960,0,900,0C840,0,780,0,720,0C660,0,600,0,540,0C480,0,420,0,360,0C300,0,240,0,180,0C120,0,60,0,30,0L0,0Z"
           ></path>
         </svg>
-        <div className="container features">
+        <div className="container features_box">
           <h2>Features</h2>
+          <div className="features__flex">
+            <div className="feature">
+              <div>
+                <h4>feature</h4>
+                <p>Lorem</p>
+              </div>
+            </div>
+            <div className="feature">
+              <div>
+                <h4>feature</h4>
+                <p>Lorem</p>
+              </div>
+            </div>
+            <div className="feature">
+              <div>
+                <h4>feature</h4>
+                <p>Lorem</p>
+              </div>
+            </div>
+          </div>
         </div>
 
         <svg
