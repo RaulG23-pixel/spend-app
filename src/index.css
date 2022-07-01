@@ -1146,7 +1146,6 @@ td {
 }
 .features__section{
   position:relative;
-  margin:4rem 0;
   background-color: rgb(15, 102, 233);
   z-index: -2;
   overflow: hidden;
@@ -1154,38 +1153,37 @@ td {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: 5rem 0;
+  padding: 5.4rem 0;
 }
 
 .landing__page .features__section h2{
   color:rgb(255,255,255);
-  margin-top: .9rem;
+  margin: 0;
 }
 .wave_top{
   position:absolute;
-  transform: rotate(5deg);
-  top:-5.2rem;
+  top:-3.5rem;
   width: 105%;
   left:0;
 }
 .wave_bottom{
   position:absolute;
-  bottom: -2rem;
-  transform: rotate(2deg);
-  width:110%;
+  bottom: -2.9rem;
+  transform: rotate(3deg);
+  width:125%;
   left:0;
 }
 .features_box{
-  margin-top: 9rem;
+  margin-top: 3rem;
 }
 .features__flex{
   display:flex;
-  margin-top: 3.3rem;
+  margin-top: 4rem;
   justify-content: space-between;
   align-items: center;
 }
 .feature{
-  background-color: #fff;
   padding: 1.5rem 2rem;
   border-radius: 10px;
+  color: rgb(255,255,255);
 }
