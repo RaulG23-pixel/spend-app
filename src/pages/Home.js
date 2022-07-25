@@ -1,20 +1,21 @@
-import React, { useEffect, useState } from "react";
-import { Redirect } from "react-router-dom";
+import React from "react";
+import Overview from "../components/home/Overview";
+import About from "../components/home/About";
+import Features from "../components/home/Features";
+import Social from "../components/home/Social";
+import Hero from "../components/home/Hero";
 
 function Home() {
-  const [isLogged, setIsLogged] = useState(false);
-  let token = localStorage.getItem("access_token");
-  useEffect(() => {
-    if (token) {
-      setIsLogged(true);
-    }
-  }, [token, setIsLogged]);
-  if (isLogged) {
-    return <Redirect to="/dashboard" />;
-  }
   return (
-    <div>
-      <h1>Home</h1>
+    <div className="landing__page">
+      <Hero />
+      <About />
+      <Features />
+      <Overview />
+      <Social />
+      <footer className="landing__footer">
+        <span>Created by Raul Gonzalez</span>
+      </footer>
     </div>
   );
 }

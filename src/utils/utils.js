@@ -8,5 +8,8 @@ function setAccessToken(token) {
 function removeAcessToken() {
   localStorage.removeItem("Access_token");
 }
+function getTestUser() {
+  return localStorage.getItem("user");
+}
 
-export { getAccessToken, setAccessToken, removeAcessToken };
+export { getAccessToken, setAccessToken, removeAcessToken, getTestUser };
