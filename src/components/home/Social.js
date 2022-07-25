@@ -10,11 +10,14 @@ function Social() {
             <i className="fab fa-twitter"></i>
             <span>twitter</span>
           </a>
-          <a href="" className="media_icon">
+          <a
+            href="https://www.instagram.com/raulgabrielz96/"
+            className="media_icon"
+          >
             <i className="fab fa-instagram"></i>
             <span>instagram</span>
           </a>
-          <a href="" className="media_icon">
+          <a href="https://github.com/RaulG23-pixel" className="media_icon">
             <i className="fab fa-github"></i>
             <span>github</span>
           </a>
