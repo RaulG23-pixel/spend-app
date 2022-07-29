@@ -7,6 +7,12 @@ import image4 from "../../assets/gallery4.png";
 function Overview() {
   //Count the pixels between each slide while it slides to an specific side
   let sliderCounter = 0;
+  const positions = {
+    0: 0,
+    1: -900,
+    2: -1800,
+    3: -2700,
+  };
   //Slides to the right
   const slideRight = () => {
     const sliderCont = document.querySelector("#slider_container");
@@ -26,6 +32,7 @@ function Overview() {
   const closeSlider = () => {
     const slider = document.querySelector(".slider");
     slider.style.visibility = "hidden";
+    slider.style.visibility = "0";
   };
   const openSlider = (e) => {
     const slider = document.querySelector(".slider");
@@ -46,15 +53,10 @@ function Overview() {
         break;
     }
     sliderCont.style.transform = `translateX(${sliderCounter}px)`;
+    displayIndicator();
   };
   const displayIndicator = () => {
     const indicators = document.querySelectorAll(".indicator");
-    const positions = {
-      0: 0,
-      1: -900,
-      2: -1800,
-      3: -2700,
-    };
     for (let pos in positions) {
       if (positions[pos] === sliderCounter) {
         for (let indicator of indicators) {
@@ -63,6 +65,13 @@ function Overview() {
         indicators[pos].style.backgroundColor = "dodgerblue";
       }
     }
+  };
+  const translateTo = (target) => {
+    const sliderCont = document.querySelector("#slider_container");
+    sliderCounter = target;
+    sliderCont.style.transform = `translateX(${sliderCounter}px)`;
+    displayIndicator();
+    return;
   };
 
   return (
@@ -123,10 +132,26 @@ function Overview() {
             <i className="fas fa-arrow-circle-right"></i>
           </button>
           <div className="indicators">
-            <button className="indicator" id="slide_0"></button>
-            <button className="indicator" id="slide_1"></button>
-            <button className="indicator" id="slide_2"></button>
-            <button className="indicator" id="slide_3"></button>
+            <button
+              className="indicator"
+              onClick={() => translateTo(0)}
+              id="slide_0"
+            ></button>
+            <button
+              className="indicator"
+              onClick={() => translateTo(-900)}
+              id="slide_1"
+            ></button>
+            <button
+              className="indicator"
+              onClick={() => translateTo(-1800)}
+              id="slide_2"
+            ></button>
+            <button
+              className="indicator"
+              onClick={() => translateTo(-2700)}
+              id="slide_3"
+            ></button>
           </div>
         </div>
         <button className="btn_slider btn_close" onClick={closeSlider}>

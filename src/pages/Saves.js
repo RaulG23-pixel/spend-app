@@ -1,5 +1,6 @@
 import React from "react";
 import Sidebar from "../components/Sidebar";
+import LineSavings from "../components/charts/savings/LineSavings";
 import { useSelector } from "react-redux";
 
 function Saves() {
@@ -12,10 +13,17 @@ function Saves() {
         <div className="app_container">
           <section className="main_container">
             <header>
-              <h1 className="title_user">Saves</h1>
+              <h1 className="title_user">Savings</h1>
               <span className="subtitle">Here you can see all your saves</span>
             </header>
-            <section></section>
+            <section className="savings">
+              <div>
+                <div>
+                  <h2>This week</h2>
+                  <LineSavings />
+                </div>
+              </div>
+            </section>
           </section>
           <Sidebar user={username} />
         </div>

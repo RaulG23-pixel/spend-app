@@ -1272,13 +1272,13 @@ td {
   justify-content: center;
   align-items: center;
   visibility: hidden;
+  padding:1.7rem 0;
 }
 .slider_container{
   width: 560%;
   height:460px;
   overflow: hidden;
   display: flex;
-
 }
 .sl_container{
   width: 843px;
@@ -1298,12 +1298,12 @@ td {
 .btn_left{
   position: absolute;
   top: 19rem;
-  left: 8rem;
+  left: 6rem;
 }
 .btn_right {
   position: absolute;
   top: 19rem;
-  right: 8.6rem;
+  right: 7.3rem;
 }
 .btn_slider{
   background: none;
@@ -1318,20 +1318,30 @@ td {
 }
 .btn_close{
   position: absolute;
-  top: 3rem;
-  right: 4rem;
-  font-size: 24px;
+  top: 5rem;
+  right: 4.3rem;
+  font-size: 20px;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  padding:.2rem .8rem;
 }
+.btn_close:hover{
+  color: #fff;
+  background:rgb(9, 53, 173);
+  border: 1px solid transparent;
+}
+
 .indicator{
   width:30px;
   cursor:pointer;
   transition: all .3s ease;
   border:none;
   margin: 0 2px;
-  height:3px;
+  height:4px;
+  background-color: white;
 }
 .indicator:hover{
-  background-color: #56b8fa;
+  background-color: #195e8b;
 
 }
 .social_media{

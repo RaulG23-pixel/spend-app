@@ -26,7 +26,7 @@ function Sidebar(props) {
           </NavLink>
           <NavLink to="/saves">
             <i className="fas fa-piggy-bank sidebar_icon"></i>
-            <span>Saves</span>
+            <span>Savings</span>
           </NavLink>
         </ul>
       </section>
