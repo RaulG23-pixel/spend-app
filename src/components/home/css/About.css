@@ -1,0 +1,106 @@
+/*About*/
+.about__section {
+    position: relative;
+}
+
+.about__flex {
+    display: flex;
+    padding: 3.4rem 0 1rem 0;
+    flex-direction: column;
+}
+
+@media screen and (min-width: 768px) {
+    .about__flex {
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 3.5rem;
+    }
+}
+
+.about__text {
+    width: 38%;
+    text-align: left;
+}
+
+.about__ilustration {
+    width: 59%;
+}
+
+.about__paragraph {
+    font-size: 13px;
+    line-height: 23px;
+
+}
+
+.about__text .btn_about {
+    margin-top: .6rem;
+}
+
+.about__heading {
+    color: #0481d4;
+    font-size: 2.23rem;
+}
+
+.circle {
+    border-radius: 50%;
+    position: absolute;
+}
+
+.c_small {
+    width: 40px;
+    height: 40px;
+}
+
+.c_medium {
+    width: 120px;
+    height: 120px;
+}
+
+.c_big {
+    width: 200px;
+    height: 200px;
+}
+
+.clearBlue {
+    background-color: rgba(167, 211, 255, 0.8);
+}
+
+.mediumBlue {
+    background-color: #51b1f1ce;
+}
+
+.darkBlue {
+    background-color: dodgerblue;
+}
+
+.ring_clblue {
+    border: 3px solid rgba(167, 211, 255, 0.7);
+}
+
+.ring_mdblue {
+    border: 3px solid #73c2f7;
+}
+
+.ring_dkblue {
+    border: 3px solid dodgerblue;
+}
+
+.pos-1 {
+    right: -6rem;
+    top: -0.6rem;
+}
+
+.pos-2 {
+    left: 1rem;
+    bottom: 5rem;
+}
+
+.pos-3 {
+    right: 2rem;
+    bottom: 2rem;
+}
+
+.pos-4 {
+    top: 2rem;
+    left: 2rem;
+}

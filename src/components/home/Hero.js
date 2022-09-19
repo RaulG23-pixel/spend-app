@@ -1,6 +1,7 @@
 import React from "react";
 import ilustration from "../../assets/ilustration1.svg";
 import { NavLink } from "react-router-dom";
+import "./css/Hero.css";
 
 function Hero() {
   return (

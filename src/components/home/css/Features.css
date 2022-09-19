@@ -1,0 +1,73 @@
+/*Features*/
+.section.features__section {
+    height: 99vh;
+}
+
+.features__section {
+    position: relative;
+    background: linear-gradient(220deg, rgb(15, 102, 233), rgb(14, 88, 199));
+    z-index: -2;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 5.3rem 0;
+}
+
+.landing__page .features__section h2 {
+    color: rgb(255, 255, 255);
+    font-size: 2rem;
+    margin: 0;
+}
+
+.wave_top {
+    position: absolute;
+    top: -3.7rem;
+    transform: translate(3deg);
+    width: 105%;
+    left: 0;
+}
+
+.wave_bottom {
+    position: absolute;
+    bottom: -3rem;
+    transform: rotate(3deg);
+    width: 125%;
+    left: 0;
+}
+
+section .features_box {
+    margin-top: 4rem;
+}
+
+.features__flex {
+    display: flex;
+    margin-top: 2.5rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.feature {
+    padding: 1.5rem 2rem;
+    border-radius: 10px;
+    color: rgb(255, 255, 255);
+    flex-basis: calc(30% - 1rem);
+    text-align: center;
+}
+
+.feature p {
+    max-width: 100%;
+    font-size: 12px;
+    line-height: 24px;
+    color: rgb(219, 219, 219);
+}
+
+.feature h4 {
+    font-size: 1.10rem;
+}
+
+.feature img {
+    width: 124px;
+    margin-bottom: 1rem;
+}

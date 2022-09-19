@@ -1,6 +1,7 @@
 import React from "react";
 import ilustration2 from "../../assets/ilustration2.svg";
 import { NavLink } from "react-router-dom";
+import "./css/About.css";
 
 function About() {
   return (

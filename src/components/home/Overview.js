@@ -3,6 +3,7 @@ import image1 from "../../assets/gallery1.png";
 import image2 from "../../assets/gallery2.png";
 import image3 from "../../assets/gallery3.png";
 import image4 from "../../assets/gallery4.png";
+import "./css/Overview.css";
 
 function Overview() {
   //Count the pixels between each slide while it slides to an specific side
@@ -32,7 +33,6 @@ function Overview() {
   const closeSlider = () => {
     const slider = document.querySelector(".slider");
     slider.style.visibility = "hidden";
-    slider.style.visibility = "0";
   };
   const openSlider = (e) => {
     const slider = document.querySelector(".slider");
