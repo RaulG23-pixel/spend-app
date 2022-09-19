@@ -13,6 +13,7 @@ async function getUser(token) {
     console.error(error);
   }
 }
+
 async function logIn(user) {
   try {
     let url = globalUrl + "/login";
@@ -26,6 +27,7 @@ async function logIn(user) {
     return error;
   }
 }
+
 async function getUsers() {
   try {
     let url = globalUrl + "/user/all";
@@ -39,6 +41,7 @@ async function getUsers() {
     console.log(error);
   }
 }
+
 async function createUser(user) {
   try {
     let url = globalUrl + "/register";
@@ -50,4 +53,5 @@ async function createUser(user) {
     console.log(error);
   }
 }
+
 export { getUser, getUsers, createUser, logIn };

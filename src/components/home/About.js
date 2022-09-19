@@ -21,7 +21,7 @@ function About() {
             nisi. Donec laoreet nisi vitae felis pulvinar, Duis fringilla
             laoreet metus eu pellentesque.
           </p>
-          <NavLink to="/dashboard" className="btn_landing btn_about">
+          <NavLink to="/login" className="btn_landing btn_about">
             Get started
           </NavLink>
         </div>

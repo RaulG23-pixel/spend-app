@@ -3,15 +3,39 @@ import useForm from "../helpers/useForm";
 import validateInfo from "../helpers/validate";
 import { Redirect } from "react-router-dom";
 import { createUser } from "../services/userService";
+import { setAccessToken } from "../utils/utils";
 
 function Register() {
   const [isRegistered, setIsRegistered] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [errorHeader, setErrorHeader] = useState(false);
+  const [registeredUser, setRegisteredUser] = useState(null);
   const { handleSubmit, handleKeyUp, errors, isSubmitted, user } =
     useForm(validateInfo);
 
-  if (isRegistered) {
-    return <Redirect to="/dashboard" />;
+  useEffect(() => {
+    if (user && isSubmitted) {
+      setIsLoading(true);
+      createUser(user)
+        .then((res) => {
+          const { data } = res;
+          if (data.code === 201) {
+            setAccessToken(data.access_token);
+            setIsLoading(false);
+            setIsRegistered(true);
+            console.log(data);
+          }
+          if (data.code === 401) {
+            setErrorHeader(data.message);
+            setIsLoading(false);
+          }
+        })
+        .catch((error) => console.log(error));
+    }
+  }, [user, isSubmitted]);
+
+  if (isRegistered && registeredUser) {
+    //return <Redirect to="/dashboard" />;
   }
   if (isLoading) {
     return (
@@ -29,6 +53,7 @@ function Register() {
       <div className="card_header">
         <h3>Register</h3>
         <span>Enter your details below to continue</span>
+        <span>{errorHeader}</span>
       </div>
       <form onSubmit={handleSubmit}>
         <div className="form_group">

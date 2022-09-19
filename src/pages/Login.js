@@ -3,6 +3,8 @@ import { Redirect } from "react-router-dom";
 import useForm from "../helpers/useForm";
 import validateInfo from "../helpers/validate";
 import { logIn } from "../services/userService";
+import { setAccessToken } from "../utils/utils";
+import "./css/login.css";
 
 function Login() {
   const [isLogged, setIsLogged] = useState(false);
@@ -12,13 +14,15 @@ function Login() {
     useForm(validateInfo);
 
   useEffect(() => {
+    console.log(user);
     if (isSubmitted && user) {
       setIsLoading(true);
+
       logIn(user)
         .then((res) => {
           const { data } = res;
           if (data.code === 200) {
-            localStorage.setItem("access_token", data.access_token);
+            setAccessToken(data.access_token);
             setIsLoading(false);
             setIsLogged(true);
           }

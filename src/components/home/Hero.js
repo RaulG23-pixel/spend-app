@@ -79,7 +79,7 @@ function Hero() {
         <div className="hero__text">
           <h1>Spend analytics with one click</h1>
           <p>Explore a new definition of data visualization with our tools</p>
-          <NavLink className="btn_landing btn_hero" to="/dashboard">
+          <NavLink className="btn_landing btn_hero" to="/login">
             Get started
           </NavLink>
         </div>
