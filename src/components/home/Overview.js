@@ -32,12 +32,14 @@ function Overview() {
   };
   const closeSlider = () => {
     const slider = document.querySelector(".slider");
-    slider.style.visibility = "hidden";
+    slider.classList.remove("open");
+    slider.classList.add("closed");
   };
   const openSlider = (e) => {
     const slider = document.querySelector(".slider");
     const sliderCont = document.querySelector("#slider_container");
-    slider.style.visibility = "visible";
+    slider.classList.add("open");
+    slider.classList.remove("closed");
     switch (e.target.id) {
       case "img_1":
         sliderCounter = 0;
@@ -77,7 +79,7 @@ function Overview() {
   return (
     <section className="overview__section" id="overview">
       <h2>overview</h2>
-      <div className="container">
+      <div className="container gallery_container">
         <div className="gallery__box">
           <div
             className="gallery__img gallery_img_1"
