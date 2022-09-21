@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Redirect } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import useForm from "../helpers/useForm";
 import validateInfo from "../helpers/validate";
 import { logIn } from "../services/userService";
@@ -92,6 +92,14 @@ function Login() {
           Login
         </button>
       </form>
+      <div className="card_footer">
+        <span>
+          Don't have an account?{" "}
+          <Link to="/register" className="card_footer__link">
+            register here
+          </Link>
+        </span>
+      </div>
     </div>
   );
 }

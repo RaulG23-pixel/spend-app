@@ -1,20 +1,32 @@
 import React, { useEffect, useState } from "react";
 import useForm from "../helpers/useForm";
 import validateInfo from "../helpers/validate";
-import { Redirect } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { createUser } from "../services/userService";
 import { setAccessToken } from "../utils/utils";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { setUser } from "../store/userSlice";
 
 function Register() {
   const [isRegistered, setIsRegistered] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [errorHeader, setErrorHeader] = useState(false);
-  const [registeredUser, setRegisteredUser] = useState(null);
   const { handleSubmit, handleKeyUp, errors, isSubmitted, user } =
     useForm(validateInfo);
 
+  const newUser = {
+    user: "alex2",
+    email: "alex@gmail",
+    hobbies: ["play football", "drive"],
+  };
+  const dispatch = useDispatch();
+  dispatch(setUser(newUser));
+  const myState = useSelector((state) => state.userData);
+  console.log(myState);
+
   useEffect(() => {
-    if (user && isSubmitted) {
+    if (isSubmitted) {
       setIsLoading(true);
       createUser(user)
         .then((res) => {
@@ -23,7 +35,6 @@ function Register() {
             setAccessToken(data.access_token);
             setIsLoading(false);
             setIsRegistered(true);
-            console.log(data);
           }
           if (data.code === 401) {
             setErrorHeader(data.message);
@@ -34,7 +45,8 @@ function Register() {
     }
   }, [user, isSubmitted]);
 
-  if (isRegistered && registeredUser) {
+  if (isRegistered) {
+    console.log(user);
     //return <Redirect to="/dashboard" />;
   }
   if (isLoading) {
@@ -49,7 +61,7 @@ function Register() {
   }
 
   return (
-    <div className="login_card">
+    <div className="login_card register">
       <div className="card_header">
         <h3>Register</h3>
         <span>Enter your details below to continue</span>
@@ -125,6 +137,14 @@ function Register() {
           Login
         </button>
       </form>
+      <div className="card_footer">
+        <span>
+          Do you have an account?{" "}
+          <Link to="/login" className="card_footer__link">
+            Login here
+          </Link>
+        </span>
+      </div>
     </div>
   );
 }

@@ -1,19 +1,19 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getTestUser } from "../utils/utils";
 
 //Initial Data
 
-const userData = JSON.parse(getTestUser());
-const initialState = {
-  value: userData,
+const userData = {
+  user: "NordicR23",
+  email: "nordic@gmail.com",
+  hobbies: ["programing", "play basketball", "read books"],
 };
 
 export const userSlice = createSlice({
   name: "user",
-  initialState,
+  initialState: { userData },
   reducers: {
     setUser: (state, action) => {
-      state.user = action.payload;
+      state.userData = action.payload;
     },
     authLogout: (state) => {
       state.user = null;

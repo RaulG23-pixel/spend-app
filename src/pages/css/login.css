@@ -8,7 +8,9 @@
     height: auto;
     box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.5);
 }
-
+.register{
+    margin-top: 80px;
+}
 .card_header {
     margin-bottom: 3rem;
 }
@@ -91,4 +93,18 @@ input:focus {
 
 .btn_submit:hover {
     background: rgb(16, 80, 143);
+}
+.card_footer{
+    margin-top: 16px;
+}
+.card_footer span{
+    font-size: 13px;
+    color: #949494;
+}
+.card_footer__link{
+    text-decoration: none;
+    color: dodgerblue;
+    font-weight: bold;
+    display: inline-block;
+    margin-left: 8px;
 }
