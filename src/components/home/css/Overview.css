@@ -144,7 +144,7 @@
 .btn_left {
     position: absolute;
     top: 18rem;
-    left: 6rem;
+    left: 7rem;
 }
 
 .btn_right {
@@ -155,7 +155,7 @@
 
 .btn_slider {
     background: none;
-    font-size: 34px;
+    font-size: 38px;
     color: #fff;
     border: none;
     cursor: pointer;
@@ -163,22 +163,22 @@
 }
 
 .btn_slider:hover {
-    color: #0481d4;
+    color: rgb(53, 190, 253);
 }
 
 .btn_close {
     position: absolute;
     top: 2rem;
     right: 4.3rem;
-    font-size: 20px;
+    font-size: 18px;
     border: 1px solid #fff;
-    border-radius: 6px;
+    border-radius: 3px;
     padding: .3rem .8rem;
 }
 
 .btn_close:hover {
     color: #fff;
-    background: rgb(8, 175, 253);
+    background: rgb(53, 190, 253);
     border: 1px solid transparent;
 }
 .indicators{

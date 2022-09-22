@@ -20,6 +20,7 @@ function Register() {
     email: "alex@gmail",
     hobbies: ["play football", "drive"],
   };
+
   const dispatch = useDispatch();
   dispatch(setUser(newUser));
   const myState = useSelector((state) => state.userData);
@@ -36,6 +37,7 @@ function Register() {
             setIsLoading(false);
             setIsRegistered(true);
           }
+
           if (data.code === 401) {
             setErrorHeader(data.message);
             setIsLoading(false);

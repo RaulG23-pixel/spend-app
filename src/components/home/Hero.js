@@ -5,7 +5,7 @@ import "./css/Hero.css";
 
 function Hero() {
   return (
-    <header className="landing__header">
+    <header className="landing__header" id="hero">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 1440 320"

@@ -4,10 +4,12 @@ import About from "../components/home/About";
 import Features from "../components/home/Features";
 import Social from "../components/home/Social";
 import Hero from "../components/home/Hero";
+import SideNavigation from "../components/home/SideNavigation";
 
 function Home() {
   return (
     <div className="landing__page">
+      <SideNavigation />
       <Hero />
       <About />
       <Features />

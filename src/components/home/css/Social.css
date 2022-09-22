@@ -1,4 +1,7 @@
 /*Social media*/
+.social__section{
+    padding-top: 1rem;
+}
 .social_media {
     height: 80%;
     display: flex;
