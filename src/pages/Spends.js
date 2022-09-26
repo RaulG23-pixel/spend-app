@@ -7,7 +7,7 @@ import DataTable from "../components/DataTable";
 
 function CreateSpend() {
   const { Anime } = ReactAnime;
-  const user = useSelector((state) => state.value);
+  const user = useSelector((state) => state.userData);
 
   if (user) {
     const { username } = user;

@@ -1,11 +1,27 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Graphics from "../components/Graphics";
 import Counters from "../components/Counters";
 import Sidebar from "../components/Sidebar";
 import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { getAccessToken } from "../utils/utils";
+import { getUser } from "../services/userService";
+import { setUser } from "../store/userSlice";
 
 function Dashboard() {
-  const user = useSelector((state) => state.value);
+  const user = useSelector((state) => state.userData);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    const token = getAccessToken();
+    if (token && !user) {
+      const userToken = JSON.parse(token);
+      getUser(userToken)
+        .then((user) => {
+          dispatch(setUser(user.data));
+        })
+        .catch((err) => console.log(err));
+    }
+  }, []);
   if (user) {
     const { username } = user;
     return (

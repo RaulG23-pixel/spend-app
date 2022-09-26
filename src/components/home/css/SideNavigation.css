@@ -3,41 +3,50 @@
     top: 14rem;
     left: 20px;
     z-index: 3;
+    padding: 0;
     background: #fff;
-    border: 1px solid rgb(185, 185, 185);
+    border: 1px solid rgb(212, 212, 212);
     border-radius: 10px;
     list-style: none;
-    padding: .7rem .2rem;
+    display: inline-block;
 }
-.s_navigation li{
-    text-align: center;
-    margin-bottom: 7px;
-}
-.s_navigation li:last-child{
-    margin-bottom: 0;
-}
-.s_navigation li:last-child{
-    margin-bottom: 0;
-}
+
+
 .s_link{
-    content: '';
-    background-color: dodgerblue;
-    width: 10px;
-    height:10px;
-    border-radius: 50%;
     display:block;
-    margin: auto;
     transition: all .3s ease;
+    color: #fff;
+    text-decoration: none;
+    padding: .5rem .3rem;
+    color: dodgerblue;
+    text-align: center;
+}
+.s_link:first-child{
+    border-radius: 10px 10px 0 0;
+}
+.s_link:last-child {
+    border-radius: 0 0 10px 10px;
+}
+.s_link:hover{
+    background-color: dodgerblue;
+    color: #fff;
+}
+.s_link:hover::before{
+    background-color: #fff;
+}
+.s_link::before{
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: dodgerblue;
+    border-radius: 50%;
+    display: block;
+    margin: auto;
 }
 .s_link__title{
-    font-size: 11px;
+    font-size: 10px;
     display:block;
-    margin-top: 14px;
-    opacity: 0;
-    color: rgb(17, 122, 226);
-    transition: all .3s ease;
-    
-}
-.s_link:hover + .s_link__title{
+    margin-top: 5px;
     opacity: 1;
+    
 }

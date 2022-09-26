@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 function Profile() {
   const [isEdit, setIsEdit] = useState(false);
 
-  const user = useSelector((state) => state.value);
+  const user = useSelector((state) => state.userData);
   const { username } = user;
   if (user) {
     return (

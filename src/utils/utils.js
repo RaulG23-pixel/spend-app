@@ -1,5 +1,5 @@
 function getAccessToken() {
-  return localStorage.getItem("access_token");
+  return localStorage.getItem("Access_token");
 }
 function setAccessToken(token) {
   const strToken = JSON.stringify(token);

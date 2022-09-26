@@ -94,9 +94,7 @@ ul {
 main {
   min-height: 500px;
 }
-main h1 {
-  font-size: 65px;
-}
+
 
 
 
@@ -147,7 +145,7 @@ main h1 {
 /*Dashboard*/
 .title_user {
   color: rgb(5, 5, 170);
-  font-size: 23px;
+  font-size: 25px;
   font-weight: bold;
   margin: 5px 0 3px 0;
 }

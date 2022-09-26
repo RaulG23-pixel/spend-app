@@ -47,9 +47,8 @@ function Register() {
     setIsLoading(false);
   }, [user, isSubmitted, dispatch]);
 
-  if (isRegistered) {
-    console.log(myState);
-    //return <Redirect to="/dashboard" />;
+  if (isRegistered && myState) {
+    return <Redirect to="/dashboard" />;
   }
   if (isLoading) {
     return (

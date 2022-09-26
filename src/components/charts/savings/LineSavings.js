@@ -2,6 +2,18 @@ import React from "react";
 import { Line } from "react-chartjs-2";
 
 function LineSavings() {
+  const windowWidth = window.innerWidth;
+  let chartHeight;
+
+  if (windowWidth >= 1024) {
+    chartHeight = 380;
+  } else if (windowWidth >= 600 && windowWidth < 1024) {
+    chartHeight = 150;
+  } else {
+    chartHeight = 200;
+  }
+  console.log(windowWidth);
+  console.log(chartHeight);
   return (
     <div className="line__chart_savings">
       <Line
@@ -47,10 +59,10 @@ function LineSavings() {
           ],
         }}
         options={{
-          maintainAspectRatio: true,
+          maintainAspectRatio: false,
           responsive: true,
         }}
-        height={160}
+        height={chartHeight}
       />
     </div>
   );

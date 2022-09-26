@@ -11,7 +11,7 @@ function Counters() {
           innerText: [0, 1334 + "$"],
           easing: "linear",
           round: true,
-          duration: 800,
+          duration: 600,
           delay: 650,
         },
         {
@@ -19,21 +19,21 @@ function Counters() {
           innerText: [0, 60],
           easing: "linear",
           round: true,
-          duration: 800,
+          duration: 600,
         },
         {
           targets: "#counter3",
           innerText: [0, 45],
           easing: "linear",
           round: true,
-          duration: 800,
+          duration: 600,
         },
         {
           targets: "#counter4",
           innerText: [0, 80],
           easing: "linear",
           round: true,
-          duration: 800,
+          duration: 600,
         },
       ]}
     >
