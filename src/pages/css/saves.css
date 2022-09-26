@@ -1,0 +1,64 @@
+.savings__header{
+    padding: 2rem 1.4rem;
+    border-radius: 8px;
+    background: linear-gradient(200deg ,rgb(1, 114, 207), rgb(5, 64, 139));
+    box-shadow: 4px 3px 8px 0px rgba(0, 88, 160, 0.4);
+    color: rgb(255,255,255);
+    width: 60%;
+    position: relative;
+}
+.savings h2{
+    font-size: 28px;
+    margin-top: 0;
+}
+.savings_icon{
+    position: absolute;
+    top: 14%;
+    font-size: 110px;
+    right: 2rem;
+    color:rgba(255,255,255,0.4);
+}
+
+.savings .row{
+    width: 100%;
+    margin: .95rem 0 2rem 0;
+}
+.savings__header_flex{
+    display: flex;
+    justify-content: space-between;
+}
+.savings__create_spend{
+    width: 30%;
+    border-radius: 10px;
+    box-shadow: 2px 4px 8px rgba(0, 88, 160, 0.4);
+    padding: 1rem .7rem;
+    text-align: center;
+    color: dodgerblue;
+}
+.savings__create_spend h4{
+    margin: 5px 0;
+}
+.savings__create_spend span{
+    font-size: 11px;
+}
+.savings__btn_create{
+    border: none;
+    color: #fff;
+    background-color: dodgerblue;
+    padding: .6rem 1rem;
+    font-weight: bold;
+    display:block;
+    width:100%;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top:20px;
+    transition: all .3s ease;
+}
+.savings__btn_create:hover{
+    background-color: rgb(25, 116, 206);
+}
+.create_spend__ilustration{
+    width:90px;
+    margin: auto;
+    display:block;
+}
