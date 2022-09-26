@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import useForm from "../helpers/useForm";
 import validateInfo from "../helpers/validate";
 import { Link, Redirect } from "react-router-dom";
-import { createUser } from "../services/userService";
+import { createUser, getUser } from "../services/userService";
 import { setAccessToken } from "../utils/utils";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
@@ -15,40 +15,40 @@ function Register() {
   const { handleSubmit, handleKeyUp, errors, isSubmitted, user } =
     useForm(validateInfo);
 
-  const newUser = {
-    user: "alex2",
-    email: "alex@gmail",
-    hobbies: ["play football", "drive"],
-  };
-
   const dispatch = useDispatch();
-  dispatch(setUser(newUser));
   const myState = useSelector((state) => state.userData);
-  console.log(myState);
 
   useEffect(() => {
     if (isSubmitted) {
       setIsLoading(true);
       createUser(user)
         .then((res) => {
-          const { data } = res;
+          const data = res.data;
+
           if (data.code === 201) {
-            setAccessToken(data.access_token);
-            setIsLoading(false);
-            setIsRegistered(true);
+            const { access_token } = data;
+            setAccessToken(access_token);
+            getUser(access_token)
+              .then((res) => {
+                dispatch(setUser(res.data));
+                setIsRegistered(true);
+              })
+              .catch((e) => {
+                setErrorHeader(e);
+              });
           }
 
           if (data.code === 401) {
             setErrorHeader(data.message);
-            setIsLoading(false);
           }
         })
-        .catch((error) => console.log(error));
+        .catch((e) => console.log(e));
     }
-  }, [user, isSubmitted]);
+    setIsLoading(false);
+  }, [user, isSubmitted, dispatch]);
 
   if (isRegistered) {
-    console.log(user);
+    console.log(myState);
     //return <Redirect to="/dashboard" />;
   }
   if (isLoading) {
