@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import Indicator from "../components/indicators/Indicator";
 import ReactAnime from "react-animejs";
 import DataTable from "../components/DataTable";
+import "./css/spends.css";
 
 function CreateSpend() {
   const { Anime } = ReactAnime;
@@ -98,7 +99,7 @@ function CreateSpend() {
                 <h2>Frecuent spends</h2>
                 <ul className="frecuent_spends_container">
                   <li className="frecuent_spend_item">
-                    <div className="color_indicator bar1"></div>
+                    <div className="color_indicator circle1"></div>
                     <div className="frecuent_spend_data">
                       <h4 className="item_title">Saldo telefono</h4>
                       <div className="progress_container">
@@ -113,7 +114,7 @@ function CreateSpend() {
                     </div>
                   </li>
                   <li className="frecuent_spend_item">
-                    <div className="color_indicator bar2"></div>
+                    <div className="color_indicator circle2"></div>
                     <div className="frecuent_spend_data">
                       <h4 className="item_title">chocolates</h4>
                       <div className="progress_container">
@@ -128,7 +129,7 @@ function CreateSpend() {
                     </div>
                   </li>
                   <li className="frecuent_spend_item">
-                    <div className="color_indicator bar3"></div>
+                    <div className="color_indicator circle3"></div>
                     <div className="frecuent_spend_data">
                       <h4 className="item_title">Rufles</h4>
                       <div className="progress_container">

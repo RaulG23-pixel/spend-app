@@ -45,7 +45,7 @@ function Saves() {
                     src={ilustration}
                     className="create_spend__ilustration"
                   />
-                  <h4>Create a new spend</h4>
+                  <h4>Create a new saving</h4>
                   <span>Store all your information about savings</span>
                   <button className="savings__btn_create">Create</button>
                 </div>
