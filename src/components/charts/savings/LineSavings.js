@@ -12,8 +12,6 @@ function LineSavings() {
   } else {
     chartHeight = 200;
   }
-  console.log(windowWidth);
-  console.log(chartHeight);
   return (
     <div className="line__chart_savings">
       <Line

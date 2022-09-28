@@ -3,7 +3,7 @@ import { Doughnut } from "react-chartjs-2";
 
 function DoughtnutChart() {
   const windowWidth = window.innerWidth;
-  const radius = windowWidth < 768 ? "60%" : "50%";
+  const radius = windowWidth < 768 ? "60%" : "70%";
   let height;
   if (windowWidth >= 1024) {
     height = 100;
@@ -35,9 +35,9 @@ function DoughtnutChart() {
         options={{
           responsive: true,
           maintainAspectRatio: true,
-          radius: "70%",
+          radius,
         }}
-        height={30}
+        height={height}
         width={20}
       />
     </div>

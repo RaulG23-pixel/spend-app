@@ -11,6 +11,7 @@ import { setUser } from "../store/userSlice";
 function Dashboard() {
   const user = useSelector((state) => state.userData);
   const dispatch = useDispatch();
+
   useEffect(() => {
     const token = getAccessToken();
     if (token && !user) {
@@ -21,7 +22,7 @@ function Dashboard() {
         })
         .catch((err) => console.log(err));
     }
-  }, []);
+  }, [dispatch, user]);
   if (user) {
     const { username } = user;
     return (
@@ -30,7 +31,7 @@ function Dashboard() {
           <section className="main_container">
             <header>
               <h1 className="title_user">Welcome {username}</h1>
-              <span className="subtitle">These are your spends</span>
+              <span className="subtitle">This is your data</span>
             </header>
             <section>
               <Counters />

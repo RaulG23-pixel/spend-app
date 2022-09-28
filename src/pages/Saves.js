@@ -22,7 +22,7 @@ function Saves() {
         })
         .catch((err) => console.log(err));
     }
-  }, []);
+  }, [dispatch, user]);
   if (user) {
     const { username } = user;
     return (
@@ -44,6 +44,7 @@ function Saves() {
                   <img
                     src={ilustration}
                     className="create_spend__ilustration"
+                    alt="create spend ilustration"
                   />
                   <h4>Create a new saving</h4>
                   <span>Store all your information about savings</span>

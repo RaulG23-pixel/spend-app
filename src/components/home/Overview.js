@@ -53,6 +53,8 @@ function Overview() {
       case "img_4":
         sliderCounter = -2700;
         break;
+      default:
+        sliderCounter = 0;
     }
     sliderCont.style.transform = `translateX(${sliderCounter}px)`;
     displayIndicator();
@@ -115,13 +117,13 @@ function Overview() {
         <div className="sl_container overflow">
           <div className="slider_container" id="slider_container">
             <div>
-              <img src={image1} />
+              <img src={image1} alt="dashboard section" />
             </div>
             <div>
-              <img src={image2} />
+              <img src={image2} alt="profile section" />
             </div>
             <div>
-              <img src={image3} />
+              <img src={image3} alt="spends section" />
             </div>
             <div>
               <img src={image4} alt="Saves section" />

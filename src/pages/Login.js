@@ -14,7 +14,6 @@ function Login() {
     useForm(validateInfo);
 
   useEffect(() => {
-    console.log(user);
     if (isSubmitted && user) {
       setIsLoading(true);
 

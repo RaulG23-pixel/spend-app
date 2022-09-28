@@ -1,9 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import esqueleto from "../assets/esqueleto.jpg";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import "./css/sidebar.css";
 
 function Sidebar(props) {
   const { user } = props;
+  useEffect(() => {
+    const configButton = document.querySelector(".config");
+    configButton.addEventListener("click", (e) => {
+      const dropdown = document.querySelector(".user_menu__dropdown");
+      if (!dropdown.classList.contains("open")) {
+        dropdown.classList.add("open");
+        dropdown.classList.remove("closed");
+      } else {
+        dropdown.classList.remove("open");
+        dropdown.classList.add("closed");
+      }
+    });
+  }, []);
 
   return (
     <aside className="sidebar active">
@@ -38,9 +52,15 @@ function Sidebar(props) {
             </div>
             <span>{user}</span>
           </div>
-          <button className="config">
-            <i className="fas fa-cog"></i>
-          </button>
+          <div className="user_menu">
+            <button className="config">
+              <i className="fas fa-cog"></i>
+            </button>
+            <nav className="user_menu__dropdown">
+              <Link to="/profile">Edit profile</Link>
+              <Link to="/singout">Sign out</Link>
+            </nav>
+          </div>
         </div>
       </footer>
     </aside>

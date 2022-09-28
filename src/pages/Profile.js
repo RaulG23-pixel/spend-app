@@ -1,16 +1,32 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Sidebar from "../components/Sidebar";
 import esqueleto from "../assets/esqueleto.jpg";
 import ProfileData from "../components/ProfileData";
 import EditProfileData from "../components/EditProfileData";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { getUser } from "../services/userService";
+import { setUser } from "../store/userSlice";
+import { getAccessToken } from "../utils/utils";
 
 function Profile() {
   const [isEdit, setIsEdit] = useState(false);
 
   const user = useSelector((state) => state.userData);
-  const { username } = user;
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const token = getAccessToken();
+    if (token && !user) {
+      const userToken = JSON.parse(token);
+      getUser(userToken)
+        .then((user) => {
+          dispatch(setUser(user.data));
+        })
+        .catch((err) => console.log(err));
+    }
+  }, [dispatch, user]);
   if (user) {
+    const { username } = user;
     return (
       <>
         <div className="app_container">
@@ -45,7 +61,7 @@ function Profile() {
                   onClick={() => setIsEdit(true)}
                   className={`button button-edit ${isEdit ? "active" : ""}`}
                 >
-                  <i class="fas fa-edit"></i> Edit
+                  <i className="fas fa-edit"></i> Edit
                 </button>
               </nav>
               {

@@ -1,15 +1,29 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Sidebar from "../components/Sidebar";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Indicator from "../components/indicators/Indicator";
 import ReactAnime from "react-animejs";
 import DataTable from "../components/DataTable";
 import "./css/spends.css";
+import { getUser } from "../services/userService";
+import { getAccessToken } from "../utils/utils";
+import { setUser } from "../store/userSlice";
 
 function CreateSpend() {
   const { Anime } = ReactAnime;
   const user = useSelector((state) => state.userData);
-
+  const dispatch = useDispatch();
+  useEffect(() => {
+    const token = getAccessToken();
+    if (token && !user) {
+      const userToken = JSON.parse(token);
+      getUser(userToken)
+        .then((user) => {
+          dispatch(setUser(user.data));
+        })
+        .catch((err) => console.log(err));
+    }
+  }, [dispatch, user]);
   if (user) {
     const { username } = user;
 
@@ -93,7 +107,7 @@ function CreateSpend() {
                   section you can create a new one.
                 </span>
                 <button>Create spend</button>
-                <i class="fas fa-book spend__banner_icon"></i>
+                <i className="fas fa-book spend__banner_icon"></i>
               </section>
               <section className="spend__frecuent_spends">
                 <h2>Frecuent spends</h2>

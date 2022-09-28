@@ -7,6 +7,7 @@ import Spends from "./pages/Spends";
 import Error404 from "./pages/Error404";
 import Profile from "./pages/Profile";
 import Saves from "./pages/Saves";
+import Signout from "./pages/Signout";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route exact path="/profile" component={Profile} />
           <Route exact path="/spends" component={Spends} />
           <Route exact path="/saves" component={Saves} />
+          <Route exact path="/singout" component={Signout} />
           <Route exact path="/">
             <Home />
           </Route>
