@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux";
 import { getAccessToken } from "../utils/utils";
 import { getUser } from "../services/userService";
 import { setUser } from "../store/userSlice";
+import "./css/dashboard.css";
 
 function Dashboard() {
   const user = useSelector((state) => state.userData);

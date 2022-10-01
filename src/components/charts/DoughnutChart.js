@@ -35,9 +35,9 @@ function DoughtnutChart() {
         options={{
           responsive: true,
           maintainAspectRatio: true,
-          radius,
+          radius: "75%",
         }}
-        height={height}
+        height={2}
         width={20}
       />
     </div>

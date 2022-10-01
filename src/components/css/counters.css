@@ -1,0 +1,69 @@
+/*Counters*/
+.counters {
+    display: flex;
+    flex-direction: row;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-top: 2.1rem;
+}
+
+@media screen and (min-width: 768px) {
+    .counters {
+        flex-direction: row;
+    }
+}
+
+.counter {
+    padding: 0.7rem 1.5rem;
+    flex: 0 0 calc(24% - 3rem);
+    border-radius: 5px;
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+    .counter {
+        flex: 1;
+        margin: 0 4px 10px 4px;
+    }
+}
+
+.counter_1 {
+    background: var(--purple);
+}
+
+.counter_2 {
+    background: rgb(66, 84, 185);
+}
+
+.counter_3 {
+    background: rgb(253, 209, 15);
+}
+
+.counter_4 {
+    background: rgb(250, 112, 146);
+}
+
+.icon i {
+    font-size: 38px;
+}
+
+.counter_data {
+    text-align: right;
+}
+
+.counter_title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.counter_subtitle {
+    font-size: 12px;
+    font-weight: bold;
+}

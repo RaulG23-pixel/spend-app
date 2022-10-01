@@ -1,3 +1,165 @@
+/*Sidebar*/
+.sidebar {
+    background-color: var(--sidebar);
+    color: #fff;
+    overflow: hidden;
+    border-radius: 0 15px 15px 0;
+}
+
+@media screen and (min-width: 768px) {
+    .sidebar {
+        flex-direction: column;
+        position: fixed;
+        min-height: 100vh;
+        width: 5%;
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        display: flex;
+        justify-content: space-between;
+        overflow: hidden;
+    }
+
+    .sidebar.active {
+        width: 19%;
+    }
+}
+
+.sidebar ul {
+    list-style: none;
+    margin: 0 !important;
+    padding: 0;
+    width: 90%;
+}
+
+.sidebar ul li,
+.sidebar ul a {
+    width: 100%;
+    cursor: pointer;
+    padding: 20px 30px;
+    transition: all 0.2s ease;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 0.5rem;
+    overflow: hidden;
+}
+
+.sidebar ul a {
+    display: block;
+    width: 100%;
+}
+
+.sidebar ul li:hover,
+.sidebar ul a:hover,
+.dropdown_click.active {
+    background: rgb(3, 65, 122);
+}
+
+.sidebar_icon {
+    margin-right: 14px;
+    font-size: 25px;
+}
+
+.img_container {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 1rem;
+}
+
+.img_container img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    object-fit: fill;
+}
+
+.sidebar__footer {
+    width: 100%;
+    background: var(--sidebar_footer);
+    display: none;
+}
+
+.sidebar__footer .flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+}
+
+@media screen and (min-width: 768px) {
+    .sidebar__footer {
+        display: block;
+    }
+}
+
+.user {
+    display: flex;
+    align-items: center;
+}
+
+.sidebar__footer span {
+    font-size: 12px;
+}
+
+.sidebar__header {
+    padding: 12px 25px;
+    margin-bottom: 1rem;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sidebar__header h3 {
+    font-size: 1.25rem;
+    width: 60%;
+}
+
+.hamburger {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+.config {
+    background: none;
+    border: none;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.config:hover {
+    color: var(--config);
+}
+
+ul.dropdown {
+    height: 0px;
+    margin: 0 0 0 30px;
+    width: 100%;
+    padding: 0 1.5rem;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.dropdown_click {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dropdown_icon {
+    margin-right: 28px;
+    transition: all 0.4s ease;
+}
+
+.dropdown_icon.rotate {
+    transform: rotate(180deg);
+}
+
+
 .user_menu{
     position: relative;
 }

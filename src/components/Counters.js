@@ -1,5 +1,6 @@
 import React from "react";
 import ReactAnime from "react-animejs";
+import "./css/counters.css";
 
 function Counters() {
   const { Anime } = ReactAnime;

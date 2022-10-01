@@ -66,7 +66,11 @@ function Profile() {
               </nav>
               {
                 <div className="profile__outlet">
-                  {isEdit ? <EditProfileData /> : <ProfileData />}
+                  {isEdit ? (
+                    <EditProfileData userData={user} />
+                  ) : (
+                    <ProfileData userData={user} />
+                  )}
                 </div>
               }
             </section>

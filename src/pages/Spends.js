@@ -13,6 +13,7 @@ function CreateSpend() {
   const { Anime } = ReactAnime;
   const user = useSelector((state) => state.userData);
   const dispatch = useDispatch();
+
   useEffect(() => {
     const token = getAccessToken();
     if (token && !user) {

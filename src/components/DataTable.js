@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./css/dataTable.css";
 function DataTable(props) {
   return (
     <div className="table__container">

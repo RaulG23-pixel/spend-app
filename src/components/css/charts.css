@@ -1,0 +1,98 @@
+/*charts and data*/
+.chart {
+    padding: 0.3rem 1.2rem;
+    border-radius: 10px;
+    height: 17rem;
+    margin-bottom: 4rem;
+    box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.2);
+}
+@media screen and (min-width: 920px){
+    .chart{
+        height: 20.7rem;
+    }
+}
+
+.chart:last-child {
+    margin-bottom: 0;
+}
+
+@media screen and (min-width: 768px) {
+    .chart {
+        margin-bottom: 2rem;
+    }
+}
+
+.chart h3 {
+    margin-bottom: 1.4rem;
+    color: rgb(7, 25, 107);
+    font-size: 1.3rem;
+    margin-top: 0.4rem;
+}
+
+.graphics {
+    width: 100%;
+    margin-top: 20px;
+    height: auto;
+    margin-left: 0;
+}
+
+.flex_chart_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto;
+}
+
+@media screen and (min-width: 900px) {
+    .flex_chart_container {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+
+.chart_container_title {
+    font-size: 35px;
+    margin: 7px 0 30px 0;
+}
+
+.bar_chart {
+    flex: 1;
+}
+
+.doughnut_chart {
+    flex: 1;
+    order: -1;
+}
+
+.line_chart {
+    flex: 1;
+}
+
+@media screen and (min-width: 768px) {
+    .bar_chart {
+        flex: 0 0 calc(35%);
+    }
+
+    .doughnut_chart {
+        flex: 0 0 calc(20%);
+    }
+
+    .line_chart {
+        flex: 1;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .bar_chart {
+        flex: 0 0 calc(60%);
+    }
+
+    .doughnut_chart {
+        flex: 0 0 calc(28%);
+        order: 0;
+    }
+
+    .line_chart {
+        flex: 5;
+    }
+}

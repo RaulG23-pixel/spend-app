@@ -45,7 +45,8 @@
 }
 
 .spend__create_banner button:hover {
-    background-color: rgb(9, 53, 173);
+    background-color: rgb(7, 58, 197);
+    box-shadow: 3px 3px 3px rgba(255,255,255,0.5);
     color: #fff;
 }
 
@@ -177,7 +178,7 @@
 
 .progress_bar {
     width: 90%;
-    height: 15px;
+    height: 12px;
     margin-right: 10px;
     border-radius: 8px;
     background-color: rgba(201, 201, 201,0.6);

@@ -1,0 +1,172 @@
+/***Profile****/
+.profile__outlet {
+    margin-top: 1.4rem;
+}
+
+.profile__edit_data {
+    margin-top: 1.3rem;
+    max-width:90%;
+}
+
+.group {
+    margin-bottom: 1.52rem;
+}
+.group:last-child{
+    margin-bottom: 0;
+}
+.group label {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    color: rgb(37, 37, 37);
+}
+
+.group input,
+.group textarea {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 0.5rem 0.7rem;
+    outline: none;
+    width: 84%;
+    font-size: 12px;
+    border-radius: 3px;
+}
+
+.group textarea {
+    resize: none;
+}
+
+.group__description {
+    display: block;
+    font-size: 12px;
+    margin-top: 3px;
+    color: var(--dark_grey);
+}
+
+.user__header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 2rem;
+    background-color: rgb(197, 210, 253);
+    width: 290px;
+    padding: 2.3rem 3rem 2.3rem 1.3rem;
+    border-radius: 8px;
+}
+
+.user__header__data {
+    display: flex;
+    flex-direction: column;
+}
+
+.user__header__title {
+    font-size: 1.48rem;
+    margin-bottom: 3px;
+}
+
+.user__header__subtitle {
+    color: rgb(39, 39, 39);
+}
+
+.user__header .img_container {
+    width: 4rem;
+    height: 4rem;
+}
+
+.user__header .img_container img {
+    border: 2px solid rgb(88, 88, 88);
+}
+
+/*Display & edit data*/
+.grid__data {
+    display: grid;
+    grid-template-columns: 65% 35%;
+}
+
+.group_bio{
+    grid-column: 2 /3;
+    grid-row: 1 / 3;
+}
+.group_bio textarea{
+    height: 108px;
+}
+.group_email{
+    grid-column: 1 / 2;
+}
+.button {
+    text-decoration: none;
+    padding: 0.5rem 3rem;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+}
+
+.button-edit {
+    background-color: rgb(224, 224, 224);
+    color: rgb(32, 32, 32);
+    border-radius: 5px 0 0 5px;
+}
+
+.button-edit.active {
+    background-color: rgb(31, 119, 207);
+    color: #fff;
+}
+
+.button-edit:last-child {
+    border-radius: 0 5px 5px 0;
+}
+
+.button-edit:hover {
+    background-color: rgb(17, 65, 114);
+    color: #fff;
+}
+
+.profile__links {
+    margin-top: 1rem;
+}
+
+.profile__data_grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.profile__data_title {
+    font-size: 0.9rem;
+    margin: 1.25rem 0 0.38rem 0;
+    font-weight: bold;
+}
+
+.profile__data_info {
+    font-size: 0.8rem;
+}
+
+.economic_section {
+    margin-bottom: 3rem;
+}
+
+.economic_data_flex {
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+}
+
+.profile__economic_data h4 {
+    color: var(--color2);
+    margin-bottom: 0.8rem;
+    font-size: 0.92rem;
+}
+.profile__btn_submit{
+    width: 120px;
+    background-color: dodgerblue;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: .56rem 0;
+    margin-top: .7rem;
+    transition: all .3s ease;
+    border-radius: 18px;
+}
+.profile__btn_submit:hover{
+    background-color: rgb(23, 103, 184);
+}

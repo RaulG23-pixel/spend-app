@@ -1,16 +1,17 @@
 import React from "react";
+import "./css/profile.css";
 
-function ProfileData() {
+function ProfileData({ userData }) {
   return (
     <article className="profile__data_grid">
       <section className="profile__personal_data">
         <div>
           <h5 className="profile__data_title">Username</h5>
-          <span className="profile__data_info">NordicR</span>
+          <span className="profile__data_info">{userData.username}</span>
         </div>
         <div>
           <h5 className="profile__data_title">Email</h5>
-          <span className="profile__data_info">nordic@gmail.com</span>
+          <span className="profile__data_info">{userData.email}</span>
         </div>
         <div>
           <h5 className="profile__data_title">Bio</h5>
