@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Sidebar from "../components/Sidebar";
 import { useDispatch, useSelector } from "react-redux";
 import Indicator from "../components/indicators/Indicator";
@@ -8,11 +8,17 @@ import "./css/spends.css";
 import { getUser } from "../services/userService";
 import { getAccessToken } from "../utils/utils";
 import { setUser } from "../store/userSlice";
+import Modal from "../components/Modal";
 
 function CreateSpend() {
   const { Anime } = ReactAnime;
   const user = useSelector((state) => state.userData);
   const dispatch = useDispatch();
+  const [isModalActive, setIsModalActive] = useState(false);
+
+  const closeModal = () => {
+    setIsModalActive(false);
+  };
 
   useEffect(() => {
     const token = getAccessToken();
@@ -25,6 +31,7 @@ function CreateSpend() {
         .catch((err) => console.log(err));
     }
   }, [dispatch, user]);
+
   if (user) {
     const { username } = user;
 
@@ -107,7 +114,13 @@ function CreateSpend() {
                   You need to create a new spend? No problem, in the create
                   section you can create a new one.
                 </span>
-                <button>Create spend</button>
+                <button
+                  onClick={() => {
+                    setIsModalActive(true);
+                  }}
+                >
+                  Create spend
+                </button>
                 <i className="fas fa-book spend__banner_icon"></i>
               </section>
               <section className="spend__frecuent_spends">
@@ -165,6 +178,9 @@ function CreateSpend() {
               <h2 className="spend__section_title">Latest spends</h2>
               <DataTable />
             </section>
+            <Modal isActive={isModalActive} closeModal={closeModal}>
+              <h1>Hola mundo</h1>
+            </Modal>
           </section>
           <Sidebar user={username} />
         </div>

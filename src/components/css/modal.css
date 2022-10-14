@@ -1,0 +1,30 @@
+.modal{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem 2rem;
+}
+.modalContainer{
+    height:100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+}
+.modal__close_button{
+    border: none;
+    background: transparent;
+    position: absolute;
+    top:8px;
+    right:5px;
+    transition: all .3s ease;
+    color: black;
+    cursor: pointer;
+}
+.modal__close_button:hover{
+    color: dodgerblue;
+}
