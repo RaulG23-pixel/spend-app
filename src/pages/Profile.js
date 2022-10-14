@@ -44,7 +44,7 @@ function Profile() {
                 <div className="user__header__data">
                   <span className="user__header__title">{username}</span>
                   <span className="subtitle user__header__subtitle">
-                    Your personal account
+                    {user.bio ?? "your personal account"}
                   </span>
                 </div>
               </div>

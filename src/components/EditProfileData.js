@@ -1,17 +1,29 @@
 import React, { useState } from "react";
+import { updateUser } from "../services/userService";
+import { useDispatch } from "react-redux";
+import { setUser } from "../store/userSlice";
 
 function EditProfileData({ userData }) {
   const [username, setUsername] = useState(userData.username);
   const [email, setEmail] = useState(userData.email);
+  const [bio, setBio] = useState(userData.bio);
   const [form, setForm] = useState({ username, email });
+  const dispatch = useDispatch();
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(form);
+    updateUser(form)
+      .then((res) => {
+        dispatch(setUser(res.data.user));
+      })
+      .catch((err) => console.log(err));
   };
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
   };
+
   return (
     <form
       className="profile__edit_data"
@@ -43,7 +55,11 @@ function EditProfileData({ userData }) {
         </div>
         <div className="group group_bio">
           <label htmlFor="bio">Bio</label>
-          <textarea name="bio"></textarea>
+          <textarea
+            name="bio"
+            value={bio}
+            onChange={(e) => setBio(e.target.value)}
+          ></textarea>
           <span className="group__description">Your profile description</span>
         </div>
         <button type="submit" className="profile__btn_submit">

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Graphics from "../components/Graphics";
 import Counters from "../components/Counters";
 import Sidebar from "../components/Sidebar";
@@ -8,13 +8,15 @@ import { getAccessToken } from "../utils/utils";
 import { getUser } from "../services/userService";
 import { setUser } from "../store/userSlice";
 import "./css/dashboard.css";
+import { Redirect } from "react-router-dom";
 
 function Dashboard() {
   const user = useSelector((state) => state.userData);
   const dispatch = useDispatch();
+  const token = getAccessToken();
+  const [notLogged, setNotLogged] = useState(false);
 
   useEffect(() => {
-    const token = getAccessToken();
     if (token && !user) {
       const userToken = JSON.parse(token);
       getUser(userToken)
@@ -22,6 +24,9 @@ function Dashboard() {
           dispatch(setUser(user.data));
         })
         .catch((err) => console.log(err));
+    }
+    if (!token) {
+      setNotLogged(true);
     }
   }, [dispatch, user]);
   if (user) {
@@ -45,6 +50,9 @@ function Dashboard() {
         </div>
       </>
     );
+  }
+  if (notLogged) {
+    return <Redirect to="/login" />;
   }
   return (
     <div className="loaderContainer">

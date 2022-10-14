@@ -1,5 +1,6 @@
 import { globalUrl } from "./globalUrl";
 import axios from "axios";
+import { useState, useEffect } from "react";
 
 async function getUser(token) {
   try {
@@ -54,4 +55,17 @@ async function createUser(user) {
   }
 }
 
-export { getUser, getUsers, createUser, logIn };
+async function updateUser(user) {
+  try {
+    let url = globalUrl + "/update";
+    console.log(url);
+    let data = await axios.put(url, user, {
+      headers: { "Content-Type": "application/json" },
+    });
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export { getUser, getUsers, createUser, logIn, updateUser };

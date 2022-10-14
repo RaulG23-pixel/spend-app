@@ -24,7 +24,6 @@ function Register() {
       createUser(user)
         .then((res) => {
           const data = res.data;
-
           if (data.code === 201) {
             const { access_token } = data;
             setAccessToken(access_token);
@@ -37,7 +36,6 @@ function Register() {
                 setErrorHeader(e);
               });
           }
-
           if (data.code === 401) {
             setErrorHeader(data.message);
           }
