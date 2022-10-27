@@ -15,7 +15,9 @@ function ProfileData({ userData }) {
         </div>
         <div>
           <h5 className="profile__data_title">Bio</h5>
-          <span className="profile__data_info">Hi my name is NordicR</span>
+          <span className="profile__data_info">
+            {userData.bio ?? `Hi my name is ${userData.username}`}
+          </span>
         </div>
       </section>
       <section className="profile__economic_section">

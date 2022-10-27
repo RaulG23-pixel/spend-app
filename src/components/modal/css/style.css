@@ -1,0 +1,23 @@
+label{
+    display:block;
+    font-weight: bold;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+input.field{
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: .4rem .6rem;
+    outline: none;
+    width: 90%;
+}
+.btn_record{
+    background-color: rgb(23, 97, 255);
+    color: #fff;
+    border:none;
+    border-radius: 5px;
+    outline: none;
+    cursor:pointer;
+    padding: .4rem;
+    font-size: 12px;
+}

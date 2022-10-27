@@ -9,6 +9,7 @@ import { getUser } from "../services/userService";
 import { getAccessToken } from "../utils/utils";
 import { setUser } from "../store/userSlice";
 import Modal from "../components/Modal";
+import ModalForm from "../components/modal/ModalForm";
 
 function CreateSpend() {
   const { Anime } = ReactAnime;
@@ -180,6 +181,7 @@ function CreateSpend() {
             </section>
             <Modal isActive={isModalActive} closeModal={closeModal}>
               <h1>Hola mundo</h1>
+              <ModalForm />
             </Modal>
           </section>
           <Sidebar user={username} />
