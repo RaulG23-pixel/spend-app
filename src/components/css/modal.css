@@ -1,40 +1,41 @@
-.modal{
-    position: absolute;
-    top: 7rem;
-    left: 34%;
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 2rem;
-    width: 400px;
+.modal {
+  position: absolute;
+  top: 5.2rem;
+  left: 34%;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 2rem;
+  width: 400px;
 }
-.modalContainer{
-    height:100vh;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: rgba(0,0,0,0.5);
-    animation: fadeIn .3s linear;
+.modalContainer {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  animation: fadeIn 0.3s linear;
 }
 @keyframes fadeIn {
-    0%{
-        opacity: 0;
-    }
-    100%{
-        opacity: 1;
-    }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
-.modal__close_button{
-    border: none;
-    background: transparent;
-    position: absolute;
-    top:8px;
-    right:5px;
-    transition: all .3s ease;
-    color: black;
-    cursor: pointer;
+.modal__close_button {
+  border: none;
+  background: transparent;
+  position: absolute;
+  top: 20px;
+  right: 12px;
+  font-size: 12px;
+  transition: all 0.3s ease;
+  color: black;
+  cursor: pointer;
 }
-.modal__close_button:hover{
-    color: dodgerblue;
+.modal__close_button:hover {
+  color: dodgerblue;
 }

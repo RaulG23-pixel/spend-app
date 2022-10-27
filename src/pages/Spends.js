@@ -180,8 +180,7 @@ function CreateSpend() {
               <DataTable />
             </section>
             <Modal isActive={isModalActive} closeModal={closeModal}>
-              <h1>Hola mundo</h1>
-              <ModalForm />
+              <ModalForm title={"Create expense"} />
             </Modal>
           </section>
           <Sidebar user={username} />
