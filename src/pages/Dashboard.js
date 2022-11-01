@@ -28,7 +28,7 @@ function Dashboard() {
     if (!token) {
       setNotLogged(true);
     }
-  }, [dispatch, user]);
+  }, [dispatch, user, token]);
   if (user) {
     const { username } = user;
     return (

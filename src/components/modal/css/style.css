@@ -1,3 +1,6 @@
+:root{
+    --button: rgb(23, 97, 255);
+}
 label{
     display:block;
     font-weight: bold;
@@ -9,25 +12,28 @@ input.field{
     border: 1px solid #ccc;
     padding: .4rem .6rem;
     outline: none;
-    width: 95%;
+    width: 80%;
+    margin-right: 20px;
 }
 .btn_record{
-    background-color: rgb(23, 97, 255);
+    background-color: var(--button);
     color: #fff;
     border:none;
     border-radius: 5px;
     outline: none;
     cursor:pointer;
-    padding: .5rem;
+    padding: .5rem .7rem;
     font-size: 12px;
 }
+
 .form_group{
     margin-bottom: 1.2rem;
 }
 
 .record_container{
     width: 100%;
-    height: 130px;
+    min-height: 50px;
+    max-height: 150px;
     padding-right: 20px;
     overflow-y: scroll;
     overflow-x: hidden;

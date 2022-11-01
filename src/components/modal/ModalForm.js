@@ -1,22 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import { saveExpense } from "../../services/expenseService";
 import "./css/style.css";
+import UseHelperModal from "./helpers";
 
 function ModalForm(props) {
-  useEffect(() => {}, []);
-
   const user = useSelector((state) => state.userData);
   const [values, setValues] = useState({
     name: "",
     userId: user.id,
     register: { record0: "0" },
   });
-
+  const { verification } = UseHelperModal();
   const [fields, setFields] = useState(Object.keys(values.register));
+  const [isValidated, setIsValidated] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(values);
   };
 
   function handleChange(e) {
@@ -24,6 +24,7 @@ function ModalForm(props) {
       ...values,
       register: { ...values.register, [e.target.name]: e.target.value },
     });
+    setIsValidated(verification(values));
   }
 
   const handleName = (e) => {
@@ -31,10 +32,25 @@ function ModalForm(props) {
   };
 
   const handleRecord = (e) => {
-    e.preventDefault();
-    const recordsQuantity = fields.length;
-    const title = `record${recordsQuantity + 1}`;
-    setFields([...fields, { [title]: 0 }]);
+    const number =
+      fields.length > 0 ? Number(fields[fields.length - 1].split("d")[1]) : 0;
+    const title = `record${number + 1}`;
+
+    setFields([...fields, title]);
+    setValues({
+      ...values,
+      register: { ...values.register, [title]: "0" },
+    });
+    setIsValidated(values);
+  };
+
+  const handleDelete = (e) => {
+    const newRegister = values.register;
+    const newArrFields = fields.filter((x) => x !== e.target.name);
+    delete newRegister[e.target.name];
+    setValues({ ...values, register: newRegister });
+    setFields(newArrFields);
+    setIsValidated(values);
   };
 
   return (
@@ -54,26 +70,41 @@ function ModalForm(props) {
           />
         </div>
         <div className="record_container" id="r_container">
-          {fields.map((x, index) => (
-            <div className="form_group" key={index}>
-              <label className="record" htmlFor="record">
-                Quantity
-              </label>
-              <input
-                className="field"
-                type="number"
-                name={`record${index}`}
-                onChange={(e) => {
-                  handleChange(e);
-                }}
-              />
-            </div>
-          ))}
+          {fields.map((x, index) => {
+            return (
+              <div className="form_group" key={index}>
+                <label className="record" htmlFor="record">
+                  Quantity
+                </label>
+                <input
+                  className="field"
+                  type="number"
+                  name={x}
+                  onChange={(e) => {
+                    handleChange(e);
+                  }}
+                  value={values.register[x]}
+                />
+                <button
+                  className="btn_eraseField"
+                  onClick={handleDelete}
+                  type="button"
+                  name={x}
+                >
+                  x
+                </button>
+              </div>
+            );
+          })}
         </div>
-        <button className="btn_record" onClick={handleRecord}>
+        <button className="btn_record" type="button" onClick={handleRecord}>
           + Add record
         </button>
-        <button type="submit" className="btn_submit">
+        <button
+          type="submit"
+          className="btn_submit"
+          disabled={isValidated ? false : true}
+        >
           Save
         </button>
       </form>

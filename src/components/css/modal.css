@@ -1,6 +1,6 @@
 .modal {
   position: absolute;
-  top: 5.2rem;
+  top: 4.6rem;
   left: 34%;
   background: #fff;
   border: 1px solid #ddd;
@@ -38,4 +38,17 @@
 }
 .modal__close_button:hover {
   color: dodgerblue;
+}
+
+.btn_eraseField{
+  border: none;
+  border-radius: 4px;
+  background-color: rgb(255, 107, 107);
+  color: #fff;
+  cursor: pointer;
+  padding: .2rem .5rem;
+  transition: all .3s ease;
+}
+.btn_eraseField:hover{
+  background-color: rgb(192, 54, 54);
 }
