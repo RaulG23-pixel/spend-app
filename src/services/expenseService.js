@@ -1,10 +1,12 @@
 import { globalUrl } from "./globalUrl";
 import axios from "axios";
 
-async function saveExpense(expense) {
+async function storeExpense(expense) {
+  let newExpense = expense;
+  newExpense.register = JSON.stringify(newExpense.register);
   try {
-    let url = globalUrl + "/expenses";
-    let data = await axios.post(url, expense, {
+    let url = globalUrl + "/expense";
+    let data = await axios.post(url, newExpense, {
       headers: { "Content-Type": "application/json" },
     });
     return data;
@@ -13,4 +15,4 @@ async function saveExpense(expense) {
   }
 }
 
-export { saveExpense };
+export { storeExpense };

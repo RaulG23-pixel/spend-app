@@ -1,22 +1,40 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { saveExpense } from "../../services/expenseService";
 import "./css/style.css";
-import UseHelperModal from "./helpers";
+import validate from "./validator";
 
 function ModalForm(props) {
   const user = useSelector((state) => state.userData);
   const [values, setValues] = useState({
     name: "",
-    userId: user.id,
+    color: "#000000",
+    user_id: user.id,
     register: { record0: "0" },
   });
-  const { verification } = UseHelperModal();
   const [fields, setFields] = useState(Object.keys(values.register));
   const [isValidated, setIsValidated] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const { service } = props;
+
+  useEffect(() => {
+    setIsValidated(validate(values));
+  }, [values]);
+
+  useEffect(() => {
+    if (isSubmitted) {
+      service(values)
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+  }, [isSubmitted, service, values]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setIsSubmitted(true);
   };
 
   function handleChange(e) {
@@ -24,24 +42,24 @@ function ModalForm(props) {
       ...values,
       register: { ...values.register, [e.target.name]: e.target.value },
     });
-    setIsValidated(verification(values));
   }
 
   const handleName = (e) => {
     setValues({ ...values, name: e.target.value });
+  };
+  const handleColor = (e) => {
+    setValues({ ...values, color: e.target.value });
   };
 
   const handleRecord = (e) => {
     const number =
       fields.length > 0 ? Number(fields[fields.length - 1].split("d")[1]) : 0;
     const title = `record${number + 1}`;
-
     setFields([...fields, title]);
     setValues({
       ...values,
       register: { ...values.register, [title]: "0" },
     });
-    setIsValidated(values);
   };
 
   const handleDelete = (e) => {
@@ -50,7 +68,6 @@ function ModalForm(props) {
     delete newRegister[e.target.name];
     setValues({ ...values, register: newRegister });
     setFields(newArrFields);
-    setIsValidated(values);
   };
 
   return (
@@ -68,6 +85,19 @@ function ModalForm(props) {
             value={values.name}
             onChange={handleName}
           />
+        </div>
+        <div className="form_group">
+          <label className="color" htmlFor="color">
+            Color identifier
+          </label>
+          <input
+            className="field color"
+            type="color"
+            name="color"
+            value={values.color}
+            onChange={handleColor}
+          />
+          <span className="colorSpan">Click the button to select a color</span>
         </div>
         <div className="record_container" id="r_container">
           {fields.map((x, index) => {

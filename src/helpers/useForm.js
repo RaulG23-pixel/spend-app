@@ -8,7 +8,7 @@ function useForm(validate) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (Object.keys(errors).length === 0 && Object.keys(values).length !== 0) {
+    if (Object.keys(errors).length === 0) {
       setUser(values);
       setIssubmitted(true);
       e.target.reset();

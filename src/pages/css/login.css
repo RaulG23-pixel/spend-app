@@ -3,11 +3,22 @@
     border: 1px solid #ccc;
     margin: 7rem auto 0 auto;
     width: min(68%, 360px);
-    padding: 3.4rem 2.5rem;
+    padding: 3rem 2.5rem;
     border-radius: 10px;
     height: auto;
     box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.5);
+    opacity: 1;
+    animation: fadeIn .4s linear;
 }
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
 .register{
     margin-top: 3.3rem;
 }

@@ -11,9 +11,7 @@ const validateEmail = (email) => {
   if (email === "" || undefined) return "Email must not be empty";
   if (
     email !== undefined &&
-    !/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-]+/.test(
-      email
-    )
+    !/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z]+\.[a-zA-Z]+/.test(email)
   ) {
     return "please insert a valid email";
   }
@@ -37,15 +35,22 @@ function validateInfo(values) {
   if (username && validateName(username)) {
     errors.username = validateName(username);
   }
+
   if (email && validateEmail(email)) {
     errors.email = validateEmail(email);
   }
+
   if (password && validatePass(password)) {
     errors.password = validatePass(password);
   }
+
   if (password_confirmation && validatePass2(password, password_confirmation)) {
-    errors.password_confirmation = validatePass2(password, password_confirmation);
+    errors.password_confirmation = validatePass2(
+      password,
+      password_confirmation
+    );
   }
+
   return Object.keys(errors).length > 0 ? errors : [];
 }
 
