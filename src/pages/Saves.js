@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Sidebar from "../components/Sidebar";
 import LineSavings from "../components/charts/savings/LineSavings";
 import { useSelector } from "react-redux";
@@ -6,14 +6,18 @@ import { useDispatch } from "react-redux";
 import { getAccessToken } from "../utils/utils";
 import { getUser } from "../services/userService";
 import { setUser } from "../store/userSlice";
-import "./css/saves.css";
 import ilustration from "../assets/ilustration3.svg";
+import Modal from "../components/Modal";
+import "./css/saves.css";
 
 function Saves() {
   const user = useSelector((state) => state.userData);
   const dispatch = useDispatch();
+  const [isModalActive, setIsModalActive] = useState(false);
+
   useEffect(() => {
     const token = getAccessToken();
+
     if (token && !user) {
       const userToken = JSON.parse(token);
       getUser(userToken)
@@ -23,6 +27,11 @@ function Saves() {
         .catch((err) => console.log(err));
     }
   }, [dispatch, user]);
+
+  const closeModal = () => {
+    setIsModalActive(false);
+  };
+
   if (user) {
     const { username } = user;
     return (
@@ -48,7 +57,14 @@ function Saves() {
                   />
                   <h4>Create a new saving</h4>
                   <span>Store all your information about savings</span>
-                  <button className="savings__btn_create">Create</button>
+                  <button
+                    className="savings__btn_create"
+                    onClick={() => {
+                      setIsModalActive(true);
+                    }}
+                  >
+                    Create
+                  </button>
                 </div>
               </div>
               <div className="savings__content">
@@ -63,6 +79,11 @@ function Saves() {
                 </div>
               </div>
             </section>
+            <Modal
+              isActive={isModalActive}
+              closeModal={closeModal}
+              type={"createSaving"}
+            />
           </section>
           <Sidebar user={username} />
         </div>

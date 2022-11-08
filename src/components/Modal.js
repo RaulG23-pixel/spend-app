@@ -9,10 +9,22 @@ function Modal(props) {
   let content;
   switch (type) {
     case "createExpense":
-      content = <ModalForm title={"Create expense"} service={storeExpense} />;
+      content = (
+        <ModalForm
+          type={"expense"}
+          closeModal={closeModal}
+          service={storeExpense}
+        />
+      );
       break;
     case "createSaving":
-      content = <ModalForm title={"Create saving"} service={storeSaving} />;
+      content = (
+        <ModalForm
+          type={"saving"}
+          closeModal={closeModal}
+          service={storeSaving}
+        />
+      );
       break;
 
     default:

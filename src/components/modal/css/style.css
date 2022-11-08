@@ -18,7 +18,7 @@ input.field{
 input.field.color{
     width: 30px;
     height: 30px;
-    padding: .2rem;
+    padding: 0.09rem;
 }
 .btn_record{
     background-color: var(--button);
@@ -56,6 +56,8 @@ input.field.color{
     background-color: #ccc;
 }
 .colorSpan{
-    font-size:12px;
+    display:block;
+    margin-top:7px;
+    font-size:11px;
     color: rgb(77, 77, 77);
 }

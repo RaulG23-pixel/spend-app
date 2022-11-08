@@ -106,6 +106,9 @@ main {
   align-items: center;
   justify-content: center;
 }
+.loaderContainer.modalLoader{
+  height: 300px;
+} 
 .loader {
   width: 100px;
   height: 100px;
