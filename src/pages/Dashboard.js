@@ -11,7 +11,7 @@ import "./css/dashboard.css";
 import { Redirect } from "react-router-dom";
 
 function Dashboard() {
-  const user = useSelector((state) => state.userData);
+  const user = useSelector((state) => state.user.userData);
   const dispatch = useDispatch();
   const token = getAccessToken();
   const [notLogged, setNotLogged] = useState(false);
@@ -20,8 +20,8 @@ function Dashboard() {
     if (token && !user) {
       const userToken = JSON.parse(token);
       getUser(userToken)
-        .then((user) => {
-          dispatch(setUser(user.data));
+        .then((response) => {
+          dispatch(setUser(response.data.user));
         })
         .catch((err) => console.log(err));
     }

@@ -5,7 +5,7 @@ import { authLogout } from "../store/userSlice";
 import { removeAcessToken } from "../utils/utils";
 
 function Signout() {
-  const user = useSelector((state) => state.userData);
+  const user = useSelector((state) => state.user.userData);
   const dispatch = useDispatch();
   const [isLoggedOut, setIsLoggedOut] = useState(false);
   useEffect(() => {

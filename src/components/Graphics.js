@@ -10,7 +10,7 @@ function Graphics() {
       <div className="flex_chart_container">
         <BarChart />
         <DoughnutChart />
-        <DataTable />
+        <DataTable records={[]} />
         <LineChart />
       </div>
     </div>

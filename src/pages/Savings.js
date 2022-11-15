@@ -10,8 +10,8 @@ import ilustration from "../assets/ilustration3.svg";
 import Modal from "../components/Modal";
 import "./css/saves.css";
 
-function Saves() {
-  const user = useSelector((state) => state.userData);
+function Savings() {
+  const user = useSelector((state) => state.user.userData);
   const dispatch = useDispatch();
   const [isModalActive, setIsModalActive] = useState(false);
 
@@ -100,4 +100,4 @@ function Saves() {
   );
 }
 
-export default Saves;
+export default Savings;

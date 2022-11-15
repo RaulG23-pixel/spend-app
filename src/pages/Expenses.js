@@ -10,9 +10,10 @@ import { getAccessToken } from "../utils/utils";
 import { setUser } from "../store/userSlice";
 import Modal from "../components/Modal";
 
-function CreateSpend() {
+function Expenses() {
   const { Anime } = ReactAnime;
-  const user = useSelector((state) => state.userData);
+  const user = useSelector((state) => state.user.userData);
+  const expenses = useSelector((state) => state.expenses.expensesData);
   const dispatch = useDispatch();
   const [isModalActive, setIsModalActive] = useState(false);
 
@@ -176,7 +177,7 @@ function CreateSpend() {
             </div>
             <section className="dataTable_section">
               <h2 className="spend__section_title">Latest spends</h2>
-              <DataTable />
+              <DataTable records={expenses} />
             </section>
 
             {/*MODAL */}
@@ -201,4 +202,4 @@ function CreateSpend() {
   );
 }
 
-export default CreateSpend;
+export default Expenses;

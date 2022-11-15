@@ -11,7 +11,7 @@ import { getAccessToken } from "../utils/utils";
 function Profile() {
   const [isEdit, setIsEdit] = useState(false);
 
-  const user = useSelector((state) => state.userData);
+  const user = useSelector((state) => state.user.userData);
   const dispatch = useDispatch();
 
   useEffect(() => {

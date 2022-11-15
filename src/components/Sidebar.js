@@ -34,11 +34,11 @@ function Sidebar(props) {
             <i className="fas fa-user sidebar_icon"></i>
             <span>Profile</span>
           </NavLink>
-          <NavLink to="/spends">
+          <NavLink to="/expenses">
             <i className="fas fa-hand-holding-usd sidebar_icon"></i>
-            <span>Spends</span>
+            <span>Expenses</span>
           </NavLink>
-          <NavLink to="/saves">
+          <NavLink to="/savings">
             <i className="fas fa-piggy-bank sidebar_icon"></i>
             <span>Savings</span>
           </NavLink>

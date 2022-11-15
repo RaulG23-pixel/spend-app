@@ -16,7 +16,7 @@ function Register() {
     useForm(validateInfo);
 
   const dispatch = useDispatch();
-  const myState = useSelector((state) => state.userData);
+  const myState = useSelector((state) => state.user.userData);
 
   useEffect(() => {
     if (isSubmitted) {
