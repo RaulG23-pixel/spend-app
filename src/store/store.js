@@ -9,4 +9,8 @@ export const store = configureStore({
     expenses: expensesReducer,
     savings: savingReducer,
   },
+  middleware: (getDefaultMiddleWare) =>
+    getDefaultMiddleWare({
+      serializableCheck: false,
+    }),
 });

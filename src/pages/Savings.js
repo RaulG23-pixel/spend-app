@@ -3,30 +3,22 @@ import Sidebar from "../components/Sidebar";
 import LineSavings from "../components/charts/savings/LineSavings";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { getAccessToken } from "../utils/utils";
-import { getUser } from "../services/userService";
-import { setUser } from "../store/userSlice";
+import { fetchUser } from "../store/userSlice";
 import ilustration from "../assets/ilustration3.svg";
 import Modal from "../components/Modal";
 import "./css/saves.css";
 
 function Savings() {
-  const user = useSelector((state) => state.user.userData);
+  const user = useSelector((state) => state.user.data);
+  const status = useSelector((state) => state.user.status);
   const dispatch = useDispatch();
   const [isModalActive, setIsModalActive] = useState(false);
 
   useEffect(() => {
-    const token = getAccessToken();
-
-    if (token && !user) {
-      const userToken = JSON.parse(token);
-      getUser(userToken)
-        .then((user) => {
-          dispatch(setUser(user.data));
-        })
-        .catch((err) => console.log(err));
+    if (status === "idle") {
+      dispatch(fetchUser());
     }
-  }, [dispatch, user]);
+  }, [dispatch, user, status]);
 
   const closeModal = () => {
     setIsModalActive(false);

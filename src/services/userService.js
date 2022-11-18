@@ -1,7 +1,9 @@
 import { globalUrl } from "./globalUrl";
 import axios from "axios";
+import { getAccessToken } from "../utils/utils";
 
-async function getUser(token) {
+async function getUser() {
+  const token = JSON.parse(getAccessToken());
   try {
     let url = globalUrl + "/user";
     let options = {
@@ -10,7 +12,7 @@ async function getUser(token) {
     const data = await axios.get(url, options);
     return data;
   } catch (error) {
-    console.error(error);
+    return error.message;
   }
 }
 
@@ -24,21 +26,7 @@ async function logIn(user) {
     });
     return data;
   } catch (error) {
-    return error;
-  }
-}
-
-async function getUsers() {
-  try {
-    let url = globalUrl + "/user/all";
-    let data = await axios.get(url, {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    return data;
-  } catch (error) {
-    console.log(error);
+    return error.message;
   }
 }
 
@@ -50,7 +38,7 @@ async function createUser(user) {
     });
     return data;
   } catch (error) {
-    console.log(error);
+    return error.message;
   }
 }
 
@@ -62,8 +50,8 @@ async function updateUser(user) {
     });
     return data;
   } catch (error) {
-    console.log(error);
+    return error.message;
   }
 }
 
-export { getUser, getUsers, createUser, logIn, updateUser };
+export { getUser, createUser, logIn, updateUser };

@@ -4,27 +4,20 @@ import esqueleto from "../assets/esqueleto.jpg";
 import ProfileData from "../components/ProfileData";
 import EditProfileData from "../components/EditProfileData";
 import { useDispatch, useSelector } from "react-redux";
-import { getUser } from "../services/userService";
-import { setUser } from "../store/userSlice";
-import { getAccessToken } from "../utils/utils";
+import { fetchUser } from "../store/userSlice";
 
 function Profile() {
   const [isEdit, setIsEdit] = useState(false);
 
-  const user = useSelector((state) => state.user.userData);
+  const user = useSelector((state) => state.user.data);
+  const status = useSelector((state) => state.user.status);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const token = getAccessToken();
-    if (token && !user) {
-      const userToken = JSON.parse(token);
-      getUser(userToken)
-        .then((user) => {
-          dispatch(setUser(user.data));
-        })
-        .catch((err) => console.log(err));
+    if (status === "idle") {
+      dispatch(fetchUser());
     }
-  }, [dispatch, user]);
+  }, [dispatch, user, status]);
   if (user) {
     const { username } = user;
     return (

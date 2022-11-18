@@ -1,34 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Graphics from "../components/Graphics";
 import Counters from "../components/Counters";
 import Sidebar from "../components/Sidebar";
 import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
-import { getAccessToken } from "../utils/utils";
-import { getUser } from "../services/userService";
-import { setUser } from "../store/userSlice";
 import "./css/dashboard.css";
-import { Redirect } from "react-router-dom";
 
 function Dashboard() {
-  const user = useSelector((state) => state.user.userData);
-  const dispatch = useDispatch();
-  const token = getAccessToken();
-  const [notLogged, setNotLogged] = useState(false);
-
-  useEffect(() => {
-    if (token && !user) {
-      const userToken = JSON.parse(token);
-      getUser(userToken)
-        .then((response) => {
-          dispatch(setUser(response.data.user));
-        })
-        .catch((err) => console.log(err));
-    }
-    if (!token) {
-      setNotLogged(true);
-    }
-  }, [dispatch, user, token]);
+  const user = useSelector((state) => state.user.data);
   if (user) {
     const { username } = user;
     return (
@@ -51,9 +29,7 @@ function Dashboard() {
       </>
     );
   }
-  if (notLogged) {
-    return <Redirect to="/login" />;
-  }
+
   return (
     <div className="loaderContainer">
       <div className="loader">

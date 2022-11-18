@@ -57,7 +57,7 @@ function EditProfileData({ userData }) {
           <label htmlFor="bio">Bio</label>
           <textarea
             name="bio"
-            value={bio}
+            value={bio || ""}
             onChange={(e) => setBio(e.target.value)}
           ></textarea>
           <span className="group__description">Your profile description</span>

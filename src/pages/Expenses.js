@@ -5,14 +5,13 @@ import Indicator from "../components/indicators/Indicator";
 import ReactAnime from "react-animejs";
 import DataTable from "../components/DataTable";
 import "./css/spends.css";
-import { getUser } from "../services/userService";
-import { getAccessToken } from "../utils/utils";
-import { setUser } from "../store/userSlice";
 import Modal from "../components/Modal";
+import { fetchUser } from "../store/userSlice";
 
 function Expenses() {
   const { Anime } = ReactAnime;
-  const user = useSelector((state) => state.user.userData);
+  const user = useSelector((state) => state.user.data);
+  const status = useSelector((state) => state.user.status);
   const expenses = useSelector((state) => state.expenses.expensesData);
   const dispatch = useDispatch();
   const [isModalActive, setIsModalActive] = useState(false);
@@ -22,16 +21,10 @@ function Expenses() {
   };
 
   useEffect(() => {
-    const token = getAccessToken();
-    if (token && !user) {
-      const userToken = JSON.parse(token);
-      getUser(userToken)
-        .then((user) => {
-          dispatch(setUser(user.data));
-        })
-        .catch((err) => console.log(err));
+    if (status === "idle") {
+      dispatch(fetchUser());
     }
-  }, [dispatch, user]);
+  }, [dispatch, user, status]);
 
   if (user) {
     const { username } = user;

@@ -5,7 +5,7 @@ import validate from "./validator";
 import successImage from "./assets/success.svg";
 
 function ModalForm(props) {
-  const user = useSelector((state) => state.userData);
+  const user = useSelector((state) => state.user);
   const [values, setValues] = useState({
     name: "",
     color: "#000000",
