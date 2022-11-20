@@ -2,16 +2,14 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import { authLogout } from "../store/userSlice";
-import { removeAcessToken } from "../utils/utils";
 
 function Signout() {
-  const user = useSelector((state) => state.user.userData);
+  const user = useSelector((state) => state.user.data);
   const dispatch = useDispatch();
   const [isLoggedOut, setIsLoggedOut] = useState(false);
   useEffect(() => {
     if (user) {
       dispatch(authLogout());
-      removeAcessToken();
       setTimeout(() => {
         setIsLoggedOut(true);
       }, 2000);

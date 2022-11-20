@@ -21,20 +21,30 @@ import { useDispatch, useSelector } from "react-redux";
 function App() {
   const token = getAccessToken();
   const dispatch = useDispatch();
-  const status = useSelector((state) => state.user.status);
+  const isLogged = useSelector((state) => state.user.isLogged);
 
   useEffect(() => {
-    if (token && status === "idle") {
+    if (token) {
       dispatch(fetchUser());
     }
-  }, [token, dispatch, status]);
+  }, [token, isLogged, dispatch]);
   return (
     <Router>
       <main>
         <Switch>
           <Route exact path="/home" component={Home} />
           <Route exact path="/register" component={Register} />
-          <Route exact path="/login" component={Login} />
+          <Route
+            exact
+            path="/login"
+            render={(props) => {
+              return !isLogged ? (
+                <Login {...props} />
+              ) : (
+                <Redirect to="/dashboard" />
+              );
+            }}
+          />
           <Route
             exact
             path="/dashboard"

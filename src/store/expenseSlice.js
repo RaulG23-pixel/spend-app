@@ -16,6 +16,7 @@ export const expensesSlice = createSlice({
       state.expensesData.filter((x) => x !== action.payload);
     },
   },
+  extraReducers: (builder) => {},
 });
 
 export const { setAllExpenses, addSingleExpense, removeSingleExpense } =

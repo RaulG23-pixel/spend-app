@@ -2,42 +2,31 @@ import React, { useEffect, useState } from "react";
 import { Link, Redirect } from "react-router-dom";
 import useForm from "../helpers/useForm";
 import validateInfo from "../helpers/validate";
-import { logIn } from "../services/userService";
-import { setAccessToken } from "../utils/utils";
+import { LogInUser } from "../store/userSlice";
 import "./css/login.css";
+import { useDispatch, useSelector } from "react-redux";
 
 function Login() {
-  const [isLogged, setIsLogged] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
   const [errorHeader, setErrorHeader] = useState(null);
+  const status = useSelector((state) => state.user.status);
+  const error = useSelector((state) => state.user.error);
+  const dispatch = useDispatch();
   const { handleKeyUp, errors, handleSubmit, isSubmitted, user } =
     useForm(validateInfo);
 
   useEffect(() => {
     if (isSubmitted && user) {
-      setIsLoading(true);
-
-      logIn(user)
-        .then((res) => {
-          const { data } = res;
-          if (data.code === 200) {
-            setAccessToken(data.access_token);
-            setIsLoading(false);
-            setIsLogged(true);
-          }
-          if (data.code === 401) {
-            setErrorHeader(data.message);
-            setIsLoading(false);
-          }
-        })
-        .catch((error) => console.log(error));
+      dispatch(LogInUser(user));
+      if (error) {
+        setErrorHeader(error);
+      }
     }
-  }, [isSubmitted, user]);
+  }, [isSubmitted, user, error, dispatch]);
 
-  if (isLogged) {
+  if (status === "user logged") {
     return <Redirect to="/dashboard" />;
   }
-  if (isLoading) {
+  if (status === "loading") {
     return (
       <div className="loaderContainer">
         <div className="loader">

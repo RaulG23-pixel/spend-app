@@ -2,53 +2,32 @@ import React, { useEffect, useState } from "react";
 import useForm from "../helpers/useForm";
 import validateInfo from "../helpers/validate";
 import { Link, Redirect } from "react-router-dom";
-import { createUser, getUser } from "../services/userService";
-import { setAccessToken } from "../utils/utils";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { setUser } from "../store/userSlice";
+import { registerUser } from "../store/userSlice";
 
 function Register() {
-  const [isRegistered, setIsRegistered] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
   const [errorHeader, setErrorHeader] = useState(false);
   const { handleSubmit, handleKeyUp, errors, isSubmitted, user } =
     useForm(validateInfo);
 
   const dispatch = useDispatch();
-  const myState = useSelector((state) => state.user.userData);
+  const status = useSelector((state) => state.user.status);
+  const error = useSelector((state) => state.user.error);
 
   useEffect(() => {
     if (isSubmitted) {
-      setIsLoading(true);
-      createUser(user)
-        .then((res) => {
-          const data = res.data;
-          if (data.code === 201) {
-            const { access_token } = data;
-            setAccessToken(access_token);
-            getUser(access_token)
-              .then((res) => {
-                dispatch(setUser(res.data));
-                setIsRegistered(true);
-              })
-              .catch((e) => {
-                setErrorHeader(e);
-              });
-          }
-          if (data.code === 401) {
-            setErrorHeader(data.message);
-          }
-        })
-        .catch((e) => console.log(e));
+      dispatch(registerUser(user));
+      if (error) {
+        setErrorHeader(error);
+      }
     }
-    setIsLoading(false);
-  }, [user, isSubmitted, dispatch]);
+  }, [user, isSubmitted, error, dispatch]);
 
-  if (isRegistered && myState) {
+  if (status === "user registered") {
     return <Redirect to="/dashboard" />;
   }
-  if (isLoading) {
+  if (status === "loading") {
     return (
       <div className="loaderContainer">
         <div className="loader">
