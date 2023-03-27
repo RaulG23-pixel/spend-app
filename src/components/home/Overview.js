@@ -8,12 +8,14 @@ import "./css/Overview.css";
 function Overview() {
   //Count the pixels between each slide while it slides to an specific side
   let sliderCounter = 0;
+
   const positions = {
     0: 0,
     1: -900,
     2: -1800,
     3: -2700,
   };
+
   //Slides to the right
   const slideRight = () => {
     const sliderCont = document.querySelector("#slider_container");
@@ -22,24 +24,31 @@ function Overview() {
     sliderCont.style.transform = `translateX(${sliderCounter}px)`;
     displayIndicator();
   };
+
   //Slides to the left
   const slideLeft = () => {
     const sliderCont = document.querySelector("#slider_container");
     sliderCounter += 900;
+
     if (sliderCounter > 0) sliderCounter = -2700;
+    
     sliderCont.style.transform = `translateX(${sliderCounter}px)`;
     displayIndicator();
   };
+
   const closeSlider = () => {
     const slider = document.querySelector(".slider");
     slider.classList.remove("open");
     slider.classList.add("closed");
   };
+
   const openSlider = (e) => {
     const slider = document.querySelector(".slider");
     const sliderCont = document.querySelector("#slider_container");
+
     slider.classList.add("open");
     slider.classList.remove("closed");
+
     switch (e.target.id) {
       case "img_1":
         sliderCounter = 0;
@@ -54,9 +63,11 @@ function Overview() {
         sliderCounter = -2700;
         break;
     }
+
     sliderCont.style.transform = `translateX(${sliderCounter}px)`;
     displayIndicator();
   };
+
   const displayIndicator = () => {
     const indicators = document.querySelectorAll(".indicator");
     for (let pos in positions) {
