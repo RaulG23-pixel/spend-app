@@ -14,22 +14,23 @@ function Login() {
     useForm(validateInfo);
 
   useEffect(() => {
-    console.log(user);
     if (isSubmitted && user) {
       setIsLoading(true);
 
       logIn(user)
         .then((res) => {
-          const { data } = res;
-          if (data.code === 200) {
-            setAccessToken(data.access_token);
+          
+          if (res.status === 200) {
+            setAccessToken(res.data.access_token);
             setIsLoading(false);
             setIsLogged(true);
           }
-          if (data.code === 401) {
-            setErrorHeader(data.message);
+
+          if (res.status === 401) {
+            setErrorHeader(res.data.message);
             setIsLoading(false);
           }
+
         })
         .catch((error) => console.log(error));
     }

@@ -1,23 +1,43 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice,createAsyncThunk } from "@reduxjs/toolkit";
+import { getUser,createUser, logIn } from "../services/userService";
+import { getAccessToken } from "../utils/utils";
 
 //Initial Data
 
-const userData = {
-  user: "NordicR23",
+const value = {
+  username: "NordicR23",
   email: "nordic@gmail.com",
   hobbies: ["programing", "play basketball", "read books"],
 };
 
+const fetchUser = createAsyncThunk('state/user/get', async () => {
+  const response = await getUser(getAccessToken());
+  return response;
+});
+
+const storeUser = createAsyncThunk('state/user/set', async (data) => {
+  const response = await createUser(data);
+  return response;
+});
+
+const loginUser = createAsyncThunk('state/user/login', async (data) => {
+  const response = await logIn(data);
+  return response;
+}); 
+
+
 export const userSlice = createSlice({
   name: "user",
-  initialState: { userData },
+  initialState: { value },
+
   reducers: {
     setUser: (state, action) => {
-      state.userData = action.payload;
+      state.value = action.payload;
     },
+
     authLogout: (state) => {
       state.user = null;
-    },
+    }
   },
 });
 
